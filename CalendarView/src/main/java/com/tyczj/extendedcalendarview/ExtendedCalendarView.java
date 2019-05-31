@@ -63,6 +63,7 @@ public class ExtendedCalendarView extends RelativeLayout implements OnItemClickL
 		init();
 	}
 	
+	@SuppressLint("ClickableViewAccessibility")
 	private void init(){
 		cal = Calendar.getInstance();
 		base = new RelativeLayout(context);
