@@ -37,7 +37,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
     private void initLayout() {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
+        getSupportActionBar().setTitle(" ");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         drawerLayout= findViewById(R.id.dl_main_drawer_root);
