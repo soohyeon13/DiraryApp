@@ -1,8 +1,5 @@
 package com.tyczj.extendedcalendarview;
 
-import java.util.Calendar;
-import java.util.Locale;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -13,13 +10,15 @@ import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
+
+import java.util.Calendar;
 
 public class ExtendedCalendarView extends RelativeLayout implements OnItemClickListener,
 	OnClickListener{
@@ -63,7 +62,7 @@ public class ExtendedCalendarView extends RelativeLayout implements OnItemClickL
 		init();
 	}
 	
-	@SuppressLint("ClickableViewAccessibility")
+	@SuppressLint({"ClickableViewAccessibility", "ResourceType"})
 	private void init(){
 		cal = Calendar.getInstance();
 		base = new RelativeLayout(context);

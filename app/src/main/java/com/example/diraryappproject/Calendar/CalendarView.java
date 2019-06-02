@@ -11,9 +11,12 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.example.diraryappproject.R;
+import com.tyczj.extendedcalendarview.Day;
 import com.tyczj.extendedcalendarview.ExtendedCalendarView;
 
 public class CalendarView extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,6 +33,16 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
         Intent intent = new Intent(this.getIntent());
 
         ExtendedCalendarView extendedCalendarView = findViewById(R.id.calendar);
+
+
+
+
+        extendedCalendarView.setOnDayClickListener(new ExtendedCalendarView.OnDayClickListener() {
+            @Override
+            public void onDayClicked(AdapterView<?> adapter, View view, int position, long id, Day day) {
+
+            }
+        });
 
         initLayout();
     }

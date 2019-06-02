@@ -218,7 +218,10 @@ public class CalendarAdapter extends BaseAdapter{
 	        	Day d = new Day(context,0,0,0);
 	        	dayList.add(d);
 	        }
-	    	j=FIRST_DAY_OF_WEEK*6+1; // sunday => 1, monday => 7
+	    	j=FIRST_DAY_OF_WEEK*6+1;// sunday => 1, monday => 7
+			if(j == 1) {
+
+			}
 	    }
         
         // populate days
