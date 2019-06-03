@@ -34,16 +34,12 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
 
         ExtendedCalendarView extendedCalendarView = findViewById(R.id.calendar);
 
-
-
-
         extendedCalendarView.setOnDayClickListener(new ExtendedCalendarView.OnDayClickListener() {
             @Override
             public void onDayClicked(AdapterView<?> adapter, View view, int position, long id, Day day) {
 
             }
         });
-
         initLayout();
     }
 
