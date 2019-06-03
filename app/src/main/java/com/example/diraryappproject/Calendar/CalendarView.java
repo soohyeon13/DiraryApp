@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.example.diraryappproject.R;
 import com.tyczj.extendedcalendarview.Day;
 import com.tyczj.extendedcalendarview.ExtendedCalendarView;
+import com.tyczj.extendedcalendarview.UserAdapter;
+import com.tyczj.extendedcalendarview.UserCollection;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -28,7 +30,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
     ActionBarDrawerToggle drawerToggle;
     Toolbar toolbar;
     private GregorianCalendar calMonth,calMonthCopy;
-    private UserAdapter UserAdapter;
+    private com.tyczj.extendedcalendarview.UserAdapter UserAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
