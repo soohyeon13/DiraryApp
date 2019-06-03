@@ -19,16 +19,29 @@ import com.example.diraryappproject.R;
 import com.tyczj.extendedcalendarview.Day;
 import com.tyczj.extendedcalendarview.ExtendedCalendarView;
 
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
+
 public class CalendarView extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle drawerToggle;
     Toolbar toolbar;
+    private GregorianCalendar calMonth,calMonthCopy;
+    private UserAdapter UserAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendarview);
+        UserCollection.userCollectionList = new ArrayList<UserCollection>();
+        UserCollection.userCollectionList.add(new UserCollection("2019-06-04","rlatngus","test"));
+
+        calMonth = (GregorianCalendar) GregorianCalendar.getInstance();
+        calMonthCopy = (GregorianCalendar) calMonth.clone();
+
+        UserAdapter = new UserAdapter(CalendarView.this,calMonth,UserCollection.userCollectionList);
+
 
         Intent intent = new Intent(this.getIntent());
 

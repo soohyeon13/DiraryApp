@@ -329,7 +329,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
     }
 
-    private class MakeRequestTask extends AsyncTask<Void, Void, String> {
+    public class MakeRequestTask extends AsyncTask<Void, Void, String> {
 
         private Exception mLastError = null;
         private MainActivity mActivity;
