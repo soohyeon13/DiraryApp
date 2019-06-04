@@ -71,134 +71,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ff82b45-1086-4edb-93eb-e7d559f2ff62" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/NavigationMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/DialogAdaptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/Dialogs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/multiply.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/rounded_calendar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_inform.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/CalendarView.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/generated/source/buildConfig/androidTest/debug/com/tyczj/extendedcalendarview/test/BuildConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/generated/source/buildConfig/debug/com/tyczj/extendedcalendarview/BuildConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/aapt_friendly_merged_manifests/debug/aapt/output.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/annotation_processor_list/debug/annotationProcessors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/compile_library_classes/debug/classes.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/incremental/debug-mergeJniLibs/merge-state" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/incremental/packageDebugAssets/merger.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/incremental/packageDebugResources/merger.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/tyczj/extendedcalendarview/BuildConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/tyczj/extendedcalendarview/CalendarAdapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/tyczj/extendedcalendarview/CalendarProvider$DatabaseHelper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/tyczj/extendedcalendarview/CalendarProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/tyczj/extendedcalendarview/Day$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/tyczj/extendedcalendarview/Day$GetEvents.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/tyczj/extendedcalendarview/Day.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/tyczj/extendedcalendarview/Event.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/tyczj/extendedcalendarview/ExtendedCalendarView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/tyczj/extendedcalendarview/ExtendedCalendarView$GestureListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/tyczj/extendedcalendarview/ExtendedCalendarView$OnDayClickListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/tyczj/extendedcalendarview/ExtendedCalendarView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/library_java_res/debug/res.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/library_manifest/debug/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/merged_manifests/debug/output.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/merged_manifests/debugAndroidTest/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/merged_manifests/debugAndroidTest/output.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/color/date_number_text_color.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable-hdpi-v4/blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable-hdpi-v4/day_bg.9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable-hdpi-v4/green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable-hdpi-v4/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable-hdpi-v4/navigation_next_item.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable-hdpi-v4/navigation_previous_item.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable-hdpi-v4/orange.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable-hdpi-v4/purple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable-hdpi-v4/quickcontact_badge_overlay_normal_light.9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable-hdpi-v4/red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable-mdpi-v4/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable-xhdpi-v4/day_bg.9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable-xhdpi-v4/navigation_next_item.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable-xhdpi-v4/navigation_previous_item.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable/date_number_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable/day_selected.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable/normal_day.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/drawable/today.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/layout/day_of_week.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/layout/day_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/mipmap/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/values-land/values-land.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/values-sw600dp-land-v13/values-sw600dp-land-v13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/values-sw600dp-v13/values-sw600dp-v13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/values-sw720dp-land-v13/values-sw720dp-land-v13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/values-sw720dp-v13/values-sw720dp-v13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/values-v11/values-v11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/values-v14/values-v14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/packaged_res/debug/values/values.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/runtime_library_classes/debug/classes.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/symbols/debug/R.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/intermediates/transforms/mergeJniLibs/debug/__content__.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/CalendarAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/CalendarProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/Day.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/Event.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/ExtendedCalendarView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/UserAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/UserCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/color/date_number_text_color.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable-hdpi/blue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable-hdpi/day_bg.9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable-hdpi/green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable-hdpi/navigation_next_item.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable-hdpi/navigation_previous_item.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable-hdpi/orange.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable-hdpi/purple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable-hdpi/quickcontact_badge_overlay_normal_light.9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable-hdpi/red.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable-xhdpi/day_bg.9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable-xhdpi/navigation_next_item.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable-xhdpi/navigation_previous_item.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable/date_number_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable/day_selected.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable/normal_day.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable/rounded_calendar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/drawable/today.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/layout/calendaraddeventitem.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/calendaraddeventitem.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/layout/day_of_week.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/layout/day_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/mipmap/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/values-land/dimen.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/values-sw600dp-land/dimen.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/values-sw600dp/dimen.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/values-sw720dp-land/dimen.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/values-sw720dp/dimen.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/values-v11/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/values-v14/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/values/dimen.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalendarView/src/main/res/values/styles.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/CalendarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/CalendarView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/calendarview.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/drawer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserCollection.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -274,84 +155,104 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserCollection.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="247">
-              <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+              <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="40" column="85" selection-start-line="40" selection-start-column="85" selection-end-line="40" selection-end-column="85" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/CalendarView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="40" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/NavigationMenu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="189">
+              <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/drawer.xml">
+          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="551">
               <caret line="29" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_calendarview.xml">
+          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="23" column="52" lean-forward="true" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+            <state relative-caret-position="437">
+              <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1957">
-              <caret line="127" column="27" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
+            <state relative-caret-position="466">
+              <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1421#1430#0" expanded="true" />
+                <element signature="e#3482#3483#0" expanded="true" />
+                <element signature="e#3585#3586#0" expanded="true" />
+                <element signature="e#3666#3667#0" expanded="true" />
+                <element signature="e#6440#6455#0" expanded="true" />
+                <element signature="e#7430#7600#0" expanded="true" />
+                <element signature="e#7599#7600#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/Dialogs.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/DialogAdaptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_inform.xml">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="741">
+              <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/rounded_calendar.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/calendaraddeventitem.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
           <provider editor-type-id="text-editor">
             <state relative-caret-position="361">
               <caret line="19" column="17" selection-start-line="18" selection-end-line="19" selection-end-column="17" />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
         </entry>
       </file>
     </leaf>
@@ -359,8 +260,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile" />
         <option value="Class" />
       </list>
     </option>
@@ -406,23 +307,27 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/WebActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/GoogleOAuth.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserCollection.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/calendaraddeventitem.xml" />
         <option value="$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/UserCollection.java" />
         <option value="$PROJECT_DIR$/CalendarView/src/main/res/drawable/rounded_calendar.xml" />
         <option value="$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/UserAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/calendarview.xml" />
         <option value="$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/ExtendedCalendarView.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/CalendarView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/NavigationMenu.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/CalendarView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/rounded_calendar.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserCollection.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/DialogAdaptor.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_inform.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/Dialogs.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1020" />
-    <option name="width" value="905" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="886" />
+    <option name="width" value="1043" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -431,8 +336,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -467,6 +373,12 @@
               <item name="DiraryAppProject" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="DiraryAppProject" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
@@ -477,7 +389,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -496,11 +407,17 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SooHyeon\AndroidStudioProjects\DiraryAppProject\app\src\main\res\drawable" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.tyczj.extendedcalendarview" />
     </key>
     <key name="android.template.packageName">
       <recent name="com.example.diraryappproject" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.diraryappproject.Calendar" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\SooHyeon\AndroidStudioProjects\DiraryAppProject\app\src\main\res\layout" />
@@ -665,7 +582,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559588982106</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="수정작업">
+      <created>1559592346864</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1559592346864</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -678,12 +602,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="709" y="0" width="834" height="832" extended-state="0" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.16979866" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.18475452" />
       <window_info id="Structure" order="3" side_tool="true" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Build Variants" order="5" side_tool="true" />
@@ -696,7 +619,7 @@
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.32765958" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50067115" side_tool="true" weight="0.1858156" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info anchor="bottom" id="Build" order="6" sideWeight="0.49932885" visible="true" weight="0.23120567" />
+      <window_info anchor="bottom" id="Build" order="6" sideWeight="0.49932885" visible="true" weight="0.23319027" />
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="8" weight="0.32765958" />
       <window_info anchor="bottom" id="Debug" order="9" />
@@ -718,15 +641,10 @@
     <MESSAGE value="Google OAuth/test" />
     <MESSAGE value="CalendarAddEvent Test" />
     <MESSAGE value="CalendarAddEvent Test/Modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="CalendarAddEvent Test/Modified" />
+    <MESSAGE value="수정작업" />
+    <option name="LAST_COMMIT_MESSAGE" value="수정작업" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -764,12 +682,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -779,12 +697,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_main.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="267">
           <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/util/TimeZone.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -800,28 +718,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/drawable-hdpi/red.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/values-sw600dp/dimen.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/values-land/dimen.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/values/dimen.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/values-sw720dp/dimen.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/drawable-hdpi/red.png" />
+    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/values-sw600dp/dimen.xml" />
+    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/values-land/dimen.xml" />
+    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/values/dimen.xml" />
+    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/values-sw720dp/dimen.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/drawer.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest" />
@@ -850,12 +758,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
@@ -864,159 +772,123 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CalendarView/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/CalendarView/build.gradle" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/GoogleOAuth.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2337">
-          <caret line="171" column="25" selection-start-line="171" selection-start-column="25" selection-end-line="171" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/Day.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1349">
-          <caret line="96" column="37" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
-          <folding>
-            <element signature="e#1159#1160#0" expanded="true" />
-            <element signature="e#1178#1179#0" expanded="true" />
-            <element signature="e#1203#1204#0" expanded="true" />
-            <element signature="e#1221#1222#0" expanded="true" />
-            <element signature="e#1253#1254#0" expanded="true" />
-            <element signature="e#1274#1275#0" expanded="true" />
-            <element signature="e#1298#1299#0" expanded="true" />
-            <element signature="e#1315#1316#0" expanded="true" />
-            <element signature="e#1413#1414#0" expanded="true" />
-            <element signature="e#1437#1438#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/Event.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="23" column="45" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
-          <folding>
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#815#816#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/CalendarProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="129" column="35" selection-start-line="129" selection-start-column="33" selection-end-line="129" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/ExtendedCalendarView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/layout/day_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1957">
-          <caret line="127" column="27" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/drawable/rounded_calendar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/calendaraddeventitem.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="17" selection-start-line="18" selection-end-line="19" selection-end-column="17" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/CalendarAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3762">
-          <caret line="223" column="13" selection-start-line="223" selection-start-column="13" selection-end-line="223" selection-end-column="13" />
-          <folding>
-            <element signature="e#1477#1478#0" expanded="true" />
-            <element signature="e#1516#1517#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/layout/day_of_week.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/Day.java" />
+    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/Event.java" />
+    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/CalendarProvider.java" />
+    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/ExtendedCalendarView.java" />
+    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/layout/day_view.xml" />
+    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/drawable/rounded_calendar.xml" />
+    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/java/com/tyczj/extendedcalendarview/CalendarAdapter.java" />
+    <entry file="file://$PROJECT_DIR$/CalendarView/src/main/res/layout/day_of_week.xml" />
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
+        <state relative-caret-position="760">
           <caret line="40" column="85" selection-start-line="40" selection-start-column="85" selection-end-line="40" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_calendarview.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="23" column="52" lean-forward="true" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/drawer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/NavigationMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/CalendarView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="40" />
+        <state relative-caret-position="76">
+          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/NavigationMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/drawer.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_calendarview.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/calendaraddeventitem.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="17" selection-start-line="18" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/rounded_calendar.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/DialogAdaptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_inform.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/Dialogs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/diraryappproject/Calendar/UserAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="222" lean-forward="true" selection-start-line="222" selection-end-line="222" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1421#1430#0" expanded="true" />
+            <element signature="e#3482#3483#0" expanded="true" />
+            <element signature="e#3585#3586#0" expanded="true" />
+            <element signature="e#3666#3667#0" expanded="true" />
+            <element signature="e#6440#6455#0" expanded="true" />
+            <element signature="e#7430#7600#0" expanded="true" />
+            <element signature="e#7599#7600#0" expanded="true" />
           </folding>
         </state>
       </provider>
