@@ -56,7 +56,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_month"
-                    android:text="Tap on day to see its detail"
                     android:layout_centerHorizontal="true"
                     android:textColor="#4b4a4a"
                     android:textSize="12dp"
@@ -93,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="S"
+                android:text="일"
                 android:textColor="#4b4a4a" />
 
             <TextView
@@ -102,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="M"
+                android:text="월"
                 android:textColor="#4b4a4a" />
 
             <TextView
@@ -111,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="T"
+                android:text="화"
                 android:textColor="#4b4a4a" />
 
             <TextView
@@ -120,7 +119,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="W"
+                android:text="수"
                 android:textColor="#4b4a4a" />
 
             <TextView
@@ -129,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="T"
+                android:text="목"
                 android:textColor="#4b4a4a" />
 
             <TextView
@@ -138,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="F"
+                android:text="금"
                 android:textColor="#4b4a4a" />
 
             <TextView
@@ -147,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="S"
+                android:text="토"
                 android:textColor="#4b4a4a" />
 
         </TableRow>
