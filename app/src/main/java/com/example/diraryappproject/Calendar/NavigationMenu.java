@@ -20,23 +20,17 @@ public class NavigationMenu extends AppCompatActivity implements NavigationView.
     NavigationView navigationView;
     ActionBarDrawerToggle drawerToggle;
     Toolbar toolbar;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.drawer);
 
-        initLayout();
-    }
     private void initLayout() {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(" ");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        drawerLayout= findViewById(R.id.dl_main_drawer_root);
+        drawerLayout = findViewById(R.id.dl_main_drawer_root);
         navigationView = findViewById(R.id.navView);
         drawerToggle = new ActionBarDrawerToggle(
-                this, drawerLayout,toolbar,
+                this, drawerLayout, toolbar,
                 R.string.drawer_open, R.string.drawer_close
         );
         drawerLayout.addDrawerListener(drawerToggle);
@@ -47,28 +41,31 @@ public class NavigationMenu extends AppCompatActivity implements NavigationView.
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.item1:
-                Toast.makeText(this,"item1 select",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "item1 select", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.item2:
-                Toast.makeText(this,"item2 select",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "item2 select", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.item3:
-                Toast.makeText(this,"item3 select",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "item3 select", Toast.LENGTH_SHORT).show();
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return false;
     }
+
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         drawerToggle.syncState();
     }
+
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         drawerToggle.onConfigurationChanged(newConfig);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (drawerToggle.onOptionsItemSelected(item)) {
@@ -76,11 +73,13 @@ public class NavigationMenu extends AppCompatActivity implements NavigationView.
         }
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        }else {
+        } else {
             super.onBackPressed();
         }
-    }}
+    }
+}

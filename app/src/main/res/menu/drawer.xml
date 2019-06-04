@@ -3,15 +3,15 @@
 
     <item
         android:id="@+id/item1"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher_round"
         android:title="가져오기" />
 
     <item
         android:id="@+id/item2"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher_round"
         android:title="설정" />
     <item
         android:id="@+id/item3"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher_round"
         android:title="item3" />
 </menu>

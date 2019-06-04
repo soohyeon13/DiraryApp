@@ -65,7 +65,7 @@ public class UserAdapter extends BaseAdapter {
 
     }
 
-    private void refreshDays() {
+    public void refreshDays() {
         items.clear();
         dayString.clear();
         Locale.setDefault(Locale.KOREAN);
@@ -141,7 +141,7 @@ public class UserAdapter extends BaseAdapter {
         if (dayString.get(position).equals(currentDateString)) {
             view.setBackgroundColor(Color.parseColor("#ffffff"));
         } else {
-            view.setBackgroundColor(Color.parseColor("$ffffff"));
+            view.setBackgroundColor(Color.parseColor("#ffffff"));
         }
 
         dayView.setText(gridvalue);
@@ -222,7 +222,7 @@ public class UserAdapter extends BaseAdapter {
                 Dialogs dialogs = new Dialogs();
 
                 dialogs.setTitles(jsonObject.optString("hnames"));
-                dialogs.setSubject(jsonObject.optString("hsubject"));
+                dialogs.setSubjects(jsonObject.optString("hsubject"));
                 dialogs.setDescripts(jsonObject.optString("descript"));
                 custom.add(dialogs);
             }
