@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -29,7 +29,7 @@
                 android:layout_height="45dp" >
 
                 <ImageButton
-                    android:id="@+id/ib_prev"
+                    android:id="@+id/imgPrevBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -44,7 +44,7 @@
                 android:layout_weight="1" >
 
                 <TextView
-                    android:id="@+id/tv_month"
+                    android:id="@+id/textMonth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -52,14 +52,14 @@
                     android:textColor="#4b4a4a"
                     android:textSize="20dip"
                     android:textStyle="bold" />
-                <TextView
+                <!--<TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_month"
+                    android:layout_below="@+id/textMonth"
                     android:layout_centerHorizontal="true"
                     android:textColor="#4b4a4a"
                     android:textSize="12dp"
-                    android:textStyle="normal" />
+                    android:textStyle="normal" />-->
             </RelativeLayout>
 
             <FrameLayout
@@ -67,7 +67,7 @@
                 android:layout_height="45dp" >
 
                 <ImageButton
-                    android:id="@+id/ib_next"
+                    android:id="@+id/imgNextBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
@@ -159,7 +159,7 @@
             android:padding="1dp" />
 
         <GridView
-            android:id="@+id/gv_calendar"
+            android:id="@+id/gridCalendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#ffffff"
@@ -174,12 +174,5 @@
         </GridView>
 
     </LinearLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_below="@+id/ll_calendar"
-        android:layout_height="match_parent">
 
-
-    </RelativeLayout>
-
-</RelativeLayout>
+</LinearLayout>

@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +23,7 @@ import com.example.diraryappproject.R;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-public class CalendarView extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class CalendarView extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
     public GregorianCalendar calMonth, calMonthClone;
     private UserAdapter userAdapter;
     private TextView textMonth;
@@ -30,12 +31,13 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
     NavigationView navigationView;
     ActionBarDrawerToggle drawerToggle;
     Toolbar toolbar;
+    ListView listItem;
+    ListViewAdapter listViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer_calendar);
-
 
         UserCollection.userCollectionList = new ArrayList<UserCollection>();
         UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "rlatngus", "test", "test"));
@@ -44,12 +46,14 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
         calMonthClone = (GregorianCalendar) calMonth.clone();
         userAdapter = new UserAdapter(CalendarView.this, calMonth, UserCollection.userCollectionList);
 
-        textMonth = findViewById(R.id.tv_month);
+        listItem = findViewById(R.id.listItem);
+
+        textMonth = findViewById(R.id.textMonth);
         textMonth.setText(android.text.format.DateFormat.format("yyyy년MM월", calMonth));
 
         initLayout();
 
-        ImageButton previousMonth = findViewById(R.id.ib_prev);
+        ImageButton previousMonth = findViewById(R.id.imgPrevBtn);
         previousMonth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +65,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 }
             }
         });
-        ImageButton nextMonth = findViewById(R.id.ib_next);
+        ImageButton nextMonth = findViewById(R.id.imgNextBtn);
         nextMonth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,7 +77,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 }
             }
         });
-        GridView gridView = findViewById(R.id.gv_calendar);
+        GridView gridView = findViewById(R.id.gridCalendar);
         gridView.setAdapter(userAdapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -82,6 +86,9 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 ((UserAdapter) parent.getAdapter()).getPositionList(selectGridDate, CalendarView.this);
             }
         });
+        listViewAdapter = new ListViewAdapter();
+        listItem.setAdapter(listViewAdapter);
+
     }
 
     private void setNextMonth() {
@@ -169,6 +176,10 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
     }
 }
 
