@@ -8,13 +8,14 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,8 +32,6 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
     NavigationView navigationView;
     ActionBarDrawerToggle drawerToggle;
     Toolbar toolbar;
-    ListView listItem;
-    ListViewAdapter listViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +44,6 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
         calMonth = (GregorianCalendar) GregorianCalendar.getInstance();
         calMonthClone = (GregorianCalendar) calMonth.clone();
         userAdapter = new UserAdapter(CalendarView.this, calMonth, UserCollection.userCollectionList);
-
-        listItem = findViewById(R.id.listItem);
 
         textMonth = findViewById(R.id.textMonth);
         textMonth.setText(android.text.format.DateFormat.format("yyyy년MM월", calMonth));
@@ -86,9 +83,17 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 ((UserAdapter) parent.getAdapter()).getPositionList(selectGridDate, CalendarView.this);
             }
         });
-        listViewAdapter = new ListViewAdapter();
-        listItem.setAdapter(listViewAdapter);
 
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+            list.add(String.format("TEXT %d",i));
+        }
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(list);
+        recyclerView.setAdapter(recyclerAdapter);
     }
 
     private void setNextMonth() {
