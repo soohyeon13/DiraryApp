@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/crud_day"
+        android:title="일정" />
+    <item
+        android:id="@+id/crud_memo"
+        android:title="메모" />
+</menu>

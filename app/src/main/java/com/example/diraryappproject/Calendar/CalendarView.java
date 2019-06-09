@@ -33,17 +33,26 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
     ActionBarDrawerToggle drawerToggle;
     Toolbar toolbar;
 
+    private RecyclerView dialogRecyclerView;
+    private RecyclerAdaptor recyclerAdaptor;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawer_calendar);
 
+        setDialogRecyclerView();
         UserCollection.userCollectionList = new ArrayList<UserCollection>();
-        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "rlatngus", "test", "test"));
+        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "컨피던스"));
+        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
+        UserCollection.userCollectionList.add(new UserCollection("2019-06-06", "김수현", "test", "블록체인"));
+        UserCollection.userCollectionList.add(new UserCollection("2019-06-06", "김수현", "test", "지갑"));
+        UserCollection.userCollectionList.add(new UserCollection("2019-06-07", "김수현", "test", "아메리카노"));
 
         calMonth = (GregorianCalendar) GregorianCalendar.getInstance();
         calMonthClone = (GregorianCalendar) calMonth.clone();
-        userAdapter = new UserAdapter(CalendarView.this, calMonth, UserCollection.userCollectionList);
+        userAdapter = new UserAdapter(CalendarView.this, calMonth, UserCollection.userCollectionList, recyclerAdaptor);
 
         textMonth = findViewById(R.id.textMonth);
         textMonth.setText(android.text.format.DateFormat.format("yyyy년MM월", calMonth));
@@ -55,7 +64,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 if (calMonth.get(GregorianCalendar.MONTH) == 4 && calMonth.get(GregorianCalendar.YEAR) == 2017) {
-                    Toast.makeText(CalendarView.this, "날짜확인좀", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CalendarView.this, "날짜확인 test", Toast.LENGTH_SHORT).show();
                 } else {
                     setPreviousMonth();
                     refreshCalendar();
@@ -83,17 +92,13 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 ((UserAdapter) parent.getAdapter()).getPositionList(selectGridDate, CalendarView.this);
             }
         });
+    }
 
-        ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < 100; i++) {
-            list.add(String.format("TEXT %d",i));
-        }
-
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        RecyclerAdapter recyclerAdapter = new RecyclerAdapter(list);
-        recyclerView.setAdapter(recyclerAdapter);
+    private void setDialogRecyclerView() {
+        dialogRecyclerView = findViewById(R.id.recyclerList);
+        recyclerAdaptor = new RecyclerAdaptor(this, new ArrayList<Recyclers>());
+        dialogRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        dialogRecyclerView.setAdapter(recyclerAdaptor);
     }
 
     private void setNextMonth() {

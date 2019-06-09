@@ -383,7 +383,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                 return "캘린더를 먼저 생성하세요.";
             }
             Events events = mService.events().list(calendarID)//"primary")
-                    .setMaxResults(10)
+                    .setMaxResults(100)
                     .setOrderBy("startTime")
                     .setSingleEvents(true)
                     .execute();

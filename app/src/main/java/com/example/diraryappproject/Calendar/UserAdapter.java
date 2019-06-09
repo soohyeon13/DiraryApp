@@ -1,15 +1,12 @@
 package com.example.diraryappproject.Calendar;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.diraryappproject.R;
@@ -45,10 +42,11 @@ public class UserAdapter extends BaseAdapter {
     String itemValue;
     String currentDateString;
     DateFormat dateFormat;
-    private ListView listTeachers;
-    private ArrayList<Dialogs> custom = new ArrayList<Dialogs>();
+    private RecyclerAdaptor recyclerAdaptor;
+    private ArrayList<Recyclers> custom = new ArrayList<Recyclers>();
 
-    public UserAdapter(Activity context, Calendar monthCalendar, ArrayList<UserCollection> userCollectionList) {
+
+    public UserAdapter(Activity context, Calendar monthCalendar, ArrayList<UserCollection> userCollectionList, RecyclerAdaptor recyclerAdaptor) {
 
         this.userCollectionList = userCollectionList;
         UserAdapter.dayString = new ArrayList<String>();
@@ -56,6 +54,7 @@ public class UserAdapter extends BaseAdapter {
         month = monthCalendar;
         selectDate = (GregorianCalendar) monthCalendar.clone();
         this.context = context;
+        this.recyclerAdaptor = recyclerAdaptor;
         month.set(GregorianCalendar.DAY_OF_MONTH, 1);
 
         this.items = new ArrayList<String>();
@@ -72,15 +71,15 @@ public class UserAdapter extends BaseAdapter {
         pmonth = (GregorianCalendar) month.clone();
         firstDay = month.get(GregorianCalendar.DAY_OF_WEEK);
         maxWeekNumber = month.getActualMaximum(GregorianCalendar.WEEK_OF_MONTH);
-        monthLength = maxWeekNumber *7;
+        monthLength = maxWeekNumber * 7;
         maxPrev = getMaxPrev();
-        calMaxPrev = maxPrev - (firstDay -1);
+        calMaxPrev = maxPrev - (firstDay - 1);
         pmonthMaxset = (GregorianCalendar) pmonth.clone();
-        pmonthMaxset.set(GregorianCalendar.DAY_OF_MONTH,calMaxPrev+1);
+        pmonthMaxset.set(GregorianCalendar.DAY_OF_MONTH, calMaxPrev + 1);
 
         for (int i = 0; i < monthLength; i++) {
             itemValue = dateFormat.format(pmonthMaxset.getTime());
-            pmonthMaxset.add(GregorianCalendar.DATE,1);
+            pmonthMaxset.add(GregorianCalendar.DATE, 1);
             dayString.add(itemValue);
         }
 
@@ -89,10 +88,10 @@ public class UserAdapter extends BaseAdapter {
     private int getMaxPrev() {
         int maxPrev;
         if (month.get(GregorianCalendar.MONTH) == month.getActualMinimum(GregorianCalendar.MONTH)) {
-            pmonth.set((month.get(GregorianCalendar.YEAR)-1),month.
-                    getActualMaximum(GregorianCalendar.MONTH),1);
-        }else {
-            pmonth.set(GregorianCalendar.MONTH, month.get(GregorianCalendar.MONTH)-1);
+            pmonth.set((month.get(GregorianCalendar.YEAR) - 1), month.
+                    getActualMaximum(GregorianCalendar.MONTH), 1);
+        } else {
+            pmonth.set(GregorianCalendar.MONTH, month.get(GregorianCalendar.MONTH) - 1);
         }
         maxPrev = pmonth.getActualMaximum(GregorianCalendar.DAY_OF_MONTH);
         return maxPrev;
@@ -115,6 +114,7 @@ public class UserAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         View view = convertView;
         TextView dayView;
         if (convertView == null) {
@@ -122,10 +122,13 @@ public class UserAdapter extends BaseAdapter {
             view = layoutInflater.inflate(R.layout.calendaraddeventitem, null);
         }
 
+
+
         dayView = view.findViewById(R.id.date);
         String[] separatedTime = dayString.get(position).split("-");
 
         gridvalue = separatedTime[2].replaceFirst("^0*", "");
+
         if ((Integer.parseInt(gridvalue) > 1) && (position < firstDay)) {
             dayView.setTextColor(Color.parseColor("#A9A9A9"));
             dayView.setClickable(false);
@@ -151,13 +154,12 @@ public class UserAdapter extends BaseAdapter {
         if (date.length() == 1) {
             date = "0" + date;
         }
-        String monthStr = "" + (month.get(GregorianCalendar.MONTH)+1);
-        if (monthStr.length() ==1) {
-            monthStr = "0" +monthStr;
+        String monthStr = "" + (month.get(GregorianCalendar.MONTH) + 1);
+        if (monthStr.length() == 1) {
+            monthStr = "0" + monthStr;
         }
 
-        setEventView(view,position,dayView);
-
+        setEventView(view, position, dayView);
 
         return view;
     }
@@ -170,11 +172,11 @@ public class UserAdapter extends BaseAdapter {
             int len1 = dayString.size();
             if (len1 > position) {
                 if (dayString.get(position).equals(date)) {
-                    if ((Integer.parseInt(gridvalue)>1) && (position<firstDay)) {
+                    if ((Integer.parseInt(gridvalue) > 1) && (position < firstDay)) {
 
-                    }else if ((Integer.parseInt(gridvalue)<7) && (position >28)) {
+                    } else if ((Integer.parseInt(gridvalue) < 7) && (position > 28)) {
 
-                    }else {
+                    } else {
                         view.setBackgroundColor(Color.parseColor("#343434"));
                         view.setBackgroundResource(R.drawable.rounded_calendar);
                         dayView.setTextColor(Color.parseColor("#696969"));
@@ -183,48 +185,38 @@ public class UserAdapter extends BaseAdapter {
             }
         }
     }
+
     public void getPositionList(String date, final Activity activity) {
         int len = UserCollection.userCollectionList.size();
         JSONArray jsonArray = new JSONArray();
         for (int i = 0; i < len; i++) {
             if (UserCollection.userCollectionList.get(i).date.equals(date)) {
-                HashMap<String,String> mapList = new HashMap<String,String>();
-                mapList.put("hnames",UserCollection.userCollectionList.get(i).name);
-                mapList.put("hsubject",UserCollection.userCollectionList.get(i).subject);
-                mapList.put("descript",UserCollection.userCollectionList.get(i).description);
-                JSONObject jsonObject= new JSONObject(mapList);
+                HashMap<String, String> mapList = new HashMap<String, String>();
+                mapList.put("hnames", UserCollection.userCollectionList.get(i).name);
+                mapList.put("hsubject", UserCollection.userCollectionList.get(i).subject);
+                mapList.put("descript", UserCollection.userCollectionList.get(i).description);
+                JSONObject jsonObject = new JSONObject(mapList);
                 jsonArray.put(jsonObject);
             }
         }
         if (jsonArray.length() != 0) {
-            final Dialog dialog = new Dialog(context);
-            dialog.setContentView(R.layout.dialog_inform);
-            listTeachers = dialog.findViewById(R.id.list_Teachers);
-            ImageView imgCross = dialog.findViewById(R.id.img_Cross);
-            listTeachers.setAdapter(new DialogAdaptor(context,getMatchList(jsonArray+"")));
-            imgCross.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dialog.dismiss();
-                }
-            });
-            dialog.show();
+            recyclerAdaptor.setList(getMatchList(jsonArray + ""));
         }
     }
 
-    private ArrayList<Dialogs> getMatchList(String s) {
+    private ArrayList<Recyclers> getMatchList(String s) {
         try {
             JSONArray jsonArray = new JSONArray(s);
-            custom = new ArrayList<Dialogs>();
+            custom = new ArrayList<Recyclers>();
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.optJSONObject(i);
 
-                Dialogs dialogs = new Dialogs();
+                Recyclers recyclers = new Recyclers();
 
-                dialogs.setTitles(jsonObject.optString("hnames"));
-                dialogs.setSubjects(jsonObject.optString("hsubject"));
-                dialogs.setDescripts(jsonObject.optString("descript"));
-                custom.add(dialogs);
+                recyclers.setTitles(jsonObject.optString("hnames"));
+                recyclers.setSubjects(jsonObject.optString("hsubject"));
+                recyclers.setDescripts(jsonObject.optString("descript"));
+                custom.add(recyclers);
             }
         } catch (JSONException e) {
             e.printStackTrace();

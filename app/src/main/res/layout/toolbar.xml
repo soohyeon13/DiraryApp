@@ -29,11 +29,8 @@
 
         <include layout="@layout/gridview_calendar" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+        <include layout="@layout/dialog_inform"/>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
