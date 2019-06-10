@@ -37,7 +37,6 @@ public class UserAdapter extends BaseAdapter {
     int monthLength;
     int calMaxPrev;
     public static List<String> dayString;
-    public ArrayList<UserCollection> userCollectionList;
     private ArrayList<String> items;
     String itemValue;
     String currentDateString;
@@ -46,9 +45,8 @@ public class UserAdapter extends BaseAdapter {
     private ArrayList<Recyclers> custom = new ArrayList<Recyclers>();
 
 
-    public UserAdapter(Activity context, Calendar monthCalendar, ArrayList<UserCollection> userCollectionList, RecyclerAdaptor recyclerAdaptor) {
+    public UserAdapter(Activity context, Calendar monthCalendar, RecyclerAdaptor recyclerAdaptor) {
 
-        this.userCollectionList = userCollectionList;
         UserAdapter.dayString = new ArrayList<String>();
         Locale.setDefault(Locale.KOREAN);
         month = monthCalendar;
@@ -165,10 +163,10 @@ public class UserAdapter extends BaseAdapter {
     }
 
     private void setEventView(View view, int position, TextView dayView) {
-        int len = UserCollection.userCollectionList.size();
+        int len = UserCollection.getInstance().size();
         for (int i = 0; i < len; i++) {
-            UserCollection calendarobj = UserCollection.userCollectionList.get(i);
-            String date = calendarobj.date;
+            UserCollection calendarobj = UserCollection.getInstance().get(i);
+            String date = calendarobj.getDate();
             int len1 = dayString.size();
             if (len1 > position) {
                 if (dayString.get(position).equals(date)) {
@@ -187,14 +185,14 @@ public class UserAdapter extends BaseAdapter {
     }
 
     public void getPositionList(String date, final Activity activity) {
-        int len = UserCollection.userCollectionList.size();
+        int len = UserCollection.getInstance().size();
         JSONArray jsonArray = new JSONArray();
         for (int i = 0; i < len; i++) {
-            if (UserCollection.userCollectionList.get(i).date.equals(date)) {
+            if (UserCollection.getInstance().get(i).getDate().equals(date)) {
                 HashMap<String, String> mapList = new HashMap<String, String>();
-                mapList.put("hnames", UserCollection.userCollectionList.get(i).name);
-                mapList.put("hsubject", UserCollection.userCollectionList.get(i).subject);
-                mapList.put("descript", UserCollection.userCollectionList.get(i).description);
+                mapList.put("hnames", UserCollection.getInstance().get(i).getName());
+                mapList.put("hsubject", UserCollection.getInstance().get(i).getSubject());
+                mapList.put("descript", UserCollection.getInstance().get(i).getDescription());
                 JSONObject jsonObject = new JSONObject(mapList);
                 jsonArray.put(jsonObject);
             }

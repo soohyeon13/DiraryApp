@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".Calendar.CalendarView"></activity>
 
+        <activity android:name=".crud.DayMemoCalendar"></activity>
+
     </application>
 
 </manifest>

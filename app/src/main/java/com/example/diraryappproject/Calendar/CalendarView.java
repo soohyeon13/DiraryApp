@@ -1,5 +1,6 @@
 package com.example.diraryappproject.Calendar;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.format.DateFormat;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -23,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.diraryappproject.R;
+import com.example.diraryappproject.crud.DayMemoCalendar;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -50,26 +53,21 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.drawer_calendar);
 
         setDialogRecyclerView();
-        UserCollection.userCollectionList = new ArrayList<UserCollection>();
-        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "컨피던스"));
-        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "노트북"));
-        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
-        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
-        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
-        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
-        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
-        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
-        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
-        UserCollection.userCollectionList.add(new UserCollection("2019-06-06", "김수현", "test", "블록체인"));
-        UserCollection.userCollectionList.add(new UserCollection("2019-06-06", "김수현", "test", "지갑"));
-        UserCollection.userCollectionList.add(new UserCollection("2019-06-07", "김수현", "test", "아메리카노"));
+
+        for(int i = 0; i < 4; i++)
+            UserCollection.add(new UserCollection() {{
+                setDate("2019-06-05");
+                setName("김수현");
+                setDescription("test");
+                setSubject("컨피던스");
+            }});
 
         calMonth = (GregorianCalendar) GregorianCalendar.getInstance();
         calMonthClone = (GregorianCalendar) calMonth.clone();
-        userAdapter = new UserAdapter(CalendarView.this, calMonth, UserCollection.userCollectionList, recyclerAdaptor);
+        userAdapter = new UserAdapter(CalendarView.this, calMonth, recyclerAdaptor);
 
         textMonth = findViewById(R.id.textMonth);
-        textMonth.setText(android.text.format.DateFormat.format("yyyy년MM월", calMonth));
+        textMonth.setText(DateFormat.format("yyyy년MM월", calMonth));
 
         initLayout();
 
@@ -129,12 +127,19 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.fab1:
                 anim();
+                Intent intent = new Intent(CalendarView.this, DayMemoCalendar.class);
+                startActivityForResult(intent, 200);
                 break;
             case R.id.fab2:
                 anim();
                 break;
         }
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+       refreshCalendar();
+    }
+
     public void anim() {
         if (isFabOpen) {
             fab1.startAnimation(fab_close);

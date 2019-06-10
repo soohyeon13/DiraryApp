@@ -12,7 +12,7 @@ import com.example.diraryappproject.R;
 
 import java.util.ArrayList;
 
-class RecyclerAdaptor extends RecyclerView.Adapter<RecyclerAdaptor.ViewHolder>{
+public class RecyclerAdaptor extends RecyclerView.Adapter<RecyclerAdaptor.ViewHolder>{
     private ArrayList<Recyclers> custom;
     private Activity context;
 

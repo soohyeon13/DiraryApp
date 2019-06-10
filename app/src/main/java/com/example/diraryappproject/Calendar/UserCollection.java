@@ -1,18 +1,28 @@
 package com.example.diraryappproject.Calendar;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class UserCollection {
-    public static ArrayList<UserCollection> userCollectionList;
-    public String subject = "";
-    public String description = "";
-    public String name = "";
-    public String date = "";
+    private String subject;
+    private String description;
+    private String name;
+    private String date;
 
-    public UserCollection(String date, String name, String subject, String description) {
-        this.date = date;
-        this.name = name;
-        this.subject = subject;
-        this.description = description;
+    public void setSubject(String value) {this.subject = value;}
+    public String getSubject() {return this.subject;}
+    public void setDescription(String value) {this.description = value;}
+    public String getDescription() {return this.description;}
+    public void setName(String value) {this.name = value;}
+    public String getName() {return this.name;}
+    public void setDate(String value) {this.date = value;}
+    public String getDate() {return this.date;}
+
+    private static List<UserCollection> instance = new ArrayList<>();
+
+    public static synchronized List<UserCollection> getInstance() {
+        return instance;
     }
+
+    public static void add(UserCollection userCollection) { instance.add(userCollection); }
 }
