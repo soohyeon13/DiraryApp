@@ -8,10 +8,10 @@
 
     <item
         android:id="@+id/item2"
-        android:icon="@mipmap/ic_launcher_round"
-        android:title="설정" />
+        android:icon="@drawable/ic_icons8_google"
+        android:title="Google" />
     <item
         android:id="@+id/item3"
-        android:icon="@mipmap/ic_launcher_round"
-        android:title="item3" />
+        android:icon="@drawable/icons8_exit"
+        android:title="로그아웃" />
 </menu>

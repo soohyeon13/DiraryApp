@@ -202,7 +202,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
         return id;
     }
 
-
     @AfterPermissionGranted(REQUEST_PERMISSION_GET_ACCOUNTS)
     private void chooseAccount() {
 
@@ -223,8 +222,6 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
                         mCredential.newChooseAccountIntent(),
                         REQUEST_ACCOUNT_PICKER);
             }
-
-
 
         } else {
 
@@ -397,6 +394,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             }
             return eventStrings.size() + "개의 데이터를 가져왔습니다.";
         }
+
         private String createCalendar() throws IOException {
             String ids = getCalendarID("CalendarTitle");
             if (ids != null) {
@@ -481,6 +479,4 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             return eventStrings;
         }
     }
-
-
 }

@@ -3,6 +3,7 @@ package com.example.diraryappproject.Calendar;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,6 +14,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
@@ -24,7 +27,7 @@ import com.example.diraryappproject.R;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-public class CalendarView extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener {
+public class CalendarView extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener,View.OnClickListener {
     public GregorianCalendar calMonth, calMonthClone;
     private UserAdapter userAdapter;
     private TextView textMonth;
@@ -32,6 +35,10 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
     NavigationView navigationView;
     ActionBarDrawerToggle drawerToggle;
     Toolbar toolbar;
+
+    private Animation fab_open, fab_close;
+    private Boolean isFabOpen = false;
+    private FloatingActionButton fab, fab1, fab2;
 
     private RecyclerView dialogRecyclerView;
     private RecyclerAdaptor recyclerAdaptor;
@@ -45,6 +52,13 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
         setDialogRecyclerView();
         UserCollection.userCollectionList = new ArrayList<UserCollection>();
         UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "컨피던스"));
+        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "노트북"));
+        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
+        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
+        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
+        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
+        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
+        UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
         UserCollection.userCollectionList.add(new UserCollection("2019-06-05", "김수현", "test", "쥬시쿨"));
         UserCollection.userCollectionList.add(new UserCollection("2019-06-06", "김수현", "test", "블록체인"));
         UserCollection.userCollectionList.add(new UserCollection("2019-06-06", "김수현", "test", "지갑"));
@@ -92,8 +106,49 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 ((UserAdapter) parent.getAdapter()).getPositionList(selectGridDate, CalendarView.this);
             }
         });
+
+        fab_open = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
+        fab_close = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close);
+
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab1 = (FloatingActionButton) findViewById(R.id.fab1);
+        fab2 = (FloatingActionButton) findViewById(R.id.fab2);
+
+        fab.setOnClickListener(this);
+        fab1.setOnClickListener(this);
+        fab2.setOnClickListener(this);
     }
 
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id) {
+            case R.id.fab:
+                anim();
+                break;
+            case R.id.fab1:
+                anim();
+                break;
+            case R.id.fab2:
+                anim();
+                break;
+        }
+    }
+    public void anim() {
+        if (isFabOpen) {
+            fab1.startAnimation(fab_close);
+            fab2.startAnimation(fab_close);
+            fab1.setClickable(false);
+            fab2.setClickable(false);
+            isFabOpen = false;
+        } else {
+            fab1.startAnimation(fab_open);
+            fab2.startAnimation(fab_open);
+            fab1.setClickable(true);
+            fab2.setClickable(true);
+            isFabOpen = true;
+        }
+    }
     private void setDialogRecyclerView() {
         dialogRecyclerView = findViewById(R.id.recyclerList);
         recyclerAdaptor = new RecyclerAdaptor(this, new ArrayList<Recyclers>());
