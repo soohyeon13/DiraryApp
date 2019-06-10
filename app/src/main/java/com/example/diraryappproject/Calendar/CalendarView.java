@@ -97,15 +97,6 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 }
             }
         });
-        GridView gridView = findViewById(R.id.gridCalendar);
-        gridView.setAdapter(userAdapter);
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String selectGridDate = UserAdapter.dayString.get(position);
-                ((UserAdapter) parent.getAdapter()).getPositionList(selectGridDate, CalendarView.this);
-            }
-        });
 
         fab_open = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
         fab_close = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close);
@@ -117,6 +108,16 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(this);
         fab1.setOnClickListener(this);
         fab2.setOnClickListener(this);
+
+        GridView gridView = findViewById(R.id.gridCalendar);
+        gridView.setAdapter(userAdapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String selectGridDate = UserAdapter.dayString.get(position);
+                ((UserAdapter) parent.getAdapter()).getPositionList(selectGridDate, CalendarView.this);
+            }
+        });
     }
 
     @Override
