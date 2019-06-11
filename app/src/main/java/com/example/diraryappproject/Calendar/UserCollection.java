@@ -7,6 +7,7 @@ public class UserCollection {
     private String subject;
     private String description;
     private String name;
+    private String location;
     private String date;
 
     public void setSubject(String value) {this.subject = value;}
@@ -15,6 +16,8 @@ public class UserCollection {
     public String getDescription() {return this.description;}
     public void setName(String value) {this.name = value;}
     public String getName() {return this.name;}
+    public void setLocation(String value) {this.location = value;}
+    public String getLocation(){return this.location;}
     public void setDate(String value) {this.date = value;}
     public String getDate() {return this.date;}
 

@@ -30,7 +30,7 @@ import com.example.diraryappproject.crud.DayMemoCalendar;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-public class CalendarView extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener,View.OnClickListener {
+public class CalendarView extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener, View.OnClickListener {
     public GregorianCalendar calMonth, calMonthClone;
     private UserAdapter userAdapter;
     private TextView textMonth;
@@ -54,10 +54,11 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
 
         setDialogRecyclerView();
 
-        for(int i = 0; i < 4; i++)
+        for (int i = 0; i < 4; i++)
             UserCollection.add(new UserCollection() {{
                 setDate("2019-06-05");
                 setName("김수현");
+                setLocation("406");
                 setDescription("test");
                 setSubject("컨피던스");
             }});
@@ -135,9 +136,10 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 break;
         }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-       refreshCalendar();
+        refreshCalendar();
     }
 
     public void anim() {
@@ -155,6 +157,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
             isFabOpen = true;
         }
     }
+
     private void setDialogRecyclerView() {
         dialogRecyclerView = findViewById(R.id.recyclerList);
         recyclerAdaptor = new RecyclerAdaptor(this, new ArrayList<Recyclers>());

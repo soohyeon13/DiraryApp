@@ -33,6 +33,7 @@ public class RecyclerAdaptor extends RecyclerView.Adapter<RecyclerAdaptor.ViewHo
     public void onBindViewHolder(@NonNull RecyclerAdaptor.ViewHolder viewHolder, int i) {
 
         viewHolder.textTitle.setText("Title :" +custom.get(i).getTitles());
+        viewHolder.textLocation.setText("Location :"+custom.get(i).getLocations());
         viewHolder.textSubject.setText("Subject :" +custom.get(i).getSubjects());
         viewHolder.textDueDate.setText("Due Date :"+custom.get(i).getDuedates());
         viewHolder.textDescription.setText("Description :" + custom.get(i).getDescripts());
@@ -49,13 +50,14 @@ public class RecyclerAdaptor extends RecyclerView.Adapter<RecyclerAdaptor.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textTitle,textSubject,textDueDate,textDescription;
+        TextView textTitle,textSubject,textDueDate,textDescription,textLocation;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textTitle = itemView.findViewById(R.id.tv_name);
             textSubject = itemView.findViewById(R.id.tv_type);
             textDueDate = itemView.findViewById(R.id.tv_desc);
             textDescription = itemView.findViewById(R.id.tv_class);
+            textLocation = itemView.findViewById(R.id.tv_location);
 
         }
     }

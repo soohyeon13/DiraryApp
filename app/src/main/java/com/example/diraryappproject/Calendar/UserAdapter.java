@@ -193,6 +193,7 @@ public class UserAdapter extends BaseAdapter {
                 mapList.put("hnames", UserCollection.getInstance().get(i).getName());
                 mapList.put("hsubject", UserCollection.getInstance().get(i).getSubject());
                 mapList.put("descript", UserCollection.getInstance().get(i).getDescription());
+                mapList.put("location",UserCollection.getInstance().get(i).getLocation());
                 JSONObject jsonObject = new JSONObject(mapList);
                 jsonArray.put(jsonObject);
             }
@@ -214,6 +215,7 @@ public class UserAdapter extends BaseAdapter {
                 recyclers.setTitles(jsonObject.optString("hnames"));
                 recyclers.setSubjects(jsonObject.optString("hsubject"));
                 recyclers.setDescripts(jsonObject.optString("descript"));
+                recyclers.setLocations((jsonObject.optString("location")));
                 custom.add(recyclers);
             }
         } catch (JSONException e) {

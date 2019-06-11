@@ -4,6 +4,7 @@ public class Recyclers {
     private String titles;
     private String subjects;
     private String types;
+    private String location;
     private String duedates;
     private String descripts;
     private String attatchmentd;
@@ -33,6 +34,10 @@ public class Recyclers {
     public void setAttatchmentd(String attatchmentd) {
         this.attatchmentd = attatchmentd;
     }
+
+    public void setLocations(String location) {this.location = location;}
+
+    public String getLocations() {return this.location;}
 
     public String getTitles() {
         return titles;
