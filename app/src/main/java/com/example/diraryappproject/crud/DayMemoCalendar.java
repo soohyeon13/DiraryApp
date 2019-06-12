@@ -15,13 +15,15 @@ import com.example.diraryappproject.R;
 
 import java.util.Calendar;
 
-public class DayMemoCalendar extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
-    EditText editDay, editLocation, editSubject, editDescription;
+public class DayMemoCalendar extends AppCompatActivity {
+    EditText editTitle, editLocation, editSubject, editDescription;
     Button datePickerBtn, timePickerBtn, submitBtn, cancelBtn;
     ImageButton imgPalette;
     private int mYear;
     private int mMonth;
     private int mDay;
+
+    DatePickerDialog.OnDateSetListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,7 @@ public class DayMemoCalendar extends AppCompatActivity implements DatePickerDial
         mDay = calendar.get(Calendar.DAY_OF_WEEK);
 
 
-        editDay = findViewById(R.id.editDay);
+        editTitle = findViewById(R.id.editTitle);
         editDescription = findViewById(R.id.editDescription);
         editLocation = findViewById(R.id.editLocation);
         editSubject = findViewById(R.id.editSubject);
@@ -49,9 +51,17 @@ public class DayMemoCalendar extends AppCompatActivity implements DatePickerDial
         datePickerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                DatePickerDialog datePickerDialog = new DatePickerDialog(DayMemoCalendar.this,listener,mYear,mMonth,mDay);
+                datePickerDialog.show();
             }
         });
+
+        listener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, final int year, final int month, final int dayOfMonth) {
+                datePickerBtn.setText(year + "-" +"0"+ (month+1) + "-" + dayOfMonth);
+            }
+        };
 
         timePickerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,18 +73,18 @@ public class DayMemoCalendar extends AppCompatActivity implements DatePickerDial
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String title = "2019-06-10";
+                final String title = editTitle.getText().toString();
                 final String location = editLocation.getText().toString();
                 final String subject = editSubject.getText().toString();
                 final String description = editDescription.getText().toString();
-//                final String day =
+                final String day = datePickerBtn.getText().toString();
 
                 UserCollection.add(new UserCollection() {{
                     setName(title);
                     setLocation(location);
                     setSubject(subject);
                     setDescription(description);
-//                    setDate(day);
+                    setDate(day);
                 }});
                 Intent resultIntent = new Intent();
                 setResult(RESULT_OK, resultIntent);
@@ -88,9 +98,5 @@ public class DayMemoCalendar extends AppCompatActivity implements DatePickerDial
                 finish();
             }
         });
-    }
-    @Override
-    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
     }
 }
