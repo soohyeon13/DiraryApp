@@ -25,8 +25,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.diraryappproject.GoogleOAuth;
 import com.example.diraryappproject.R;
-import com.example.diraryappproject.crud.DayMemoCalendar;
+import com.example.diraryappproject.crud.DayCalendar;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -131,7 +132,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.fab1:
                 anim();
-                Intent intent = new Intent(CalendarView.this, DayMemoCalendar.class);
+                Intent intent = new Intent(CalendarView.this, DayCalendar.class);
                 startActivityForResult(intent, 200);
                 break;
             case R.id.fab2:
@@ -216,6 +217,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this, "item1 select", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.item2:
+                new GoogleOAuth();
                 Toast.makeText(this, "item2 select", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.item3:

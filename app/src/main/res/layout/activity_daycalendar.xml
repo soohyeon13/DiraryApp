@@ -22,14 +22,6 @@
             android:backgroundTint="#FFFFFF"
             android:hint="일정" />
 
-        <ImageButton
-            android:id="@+id/imgPalttBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/icons8_paint_palette1"
-            android:background="#FFFFFF"/>
-
 
     </LinearLayout>
 
@@ -88,6 +80,28 @@
         android:layout_marginRight="20dp"
         android:hint="설명"
         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imgPalttBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/icons8_paint_palette1"
+            android:background="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:paddingRight="100dp" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

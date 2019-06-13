@@ -28,7 +28,7 @@
         </activity>
         <activity android:name=".Calendar.CalendarView"></activity>
 
-        <activity android:name=".crud.DayMemoCalendar"></activity>
+        <activity android:name=".crud.DayCalendar"></activity>
 
     </application>
 
