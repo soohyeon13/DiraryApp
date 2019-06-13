@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.diraryappproject.Calendar.UserCollection;
+import com.example.diraryappproject.ColorData;
 import com.example.diraryappproject.R;
 import com.jaredrummler.android.colorpicker.ColorPickerDialog;
 import com.jaredrummler.android.colorpicker.ColorPickerDialogListener;
@@ -29,6 +30,7 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
     private int mDay;
     private static final int DIALOG_DEFAULT_ID = 0;
     private static final int DIALOG_PRESET_ID = 1;
+    private ColorData colorData;
 
     DatePickerDialog.OnDateSetListener listener;
 
@@ -50,7 +52,6 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
         editSubject = findViewById(R.id.editSubject);
 
         datePickerBtn = findViewById(R.id.datePicker);
-        timePickerBtn = findViewById(R.id.timePicker);
         submitBtn = findViewById(R.id.submitbtn);
         cancelBtn = findViewById(R.id.cancelbtn);
 
@@ -71,10 +72,33 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
             }
         };
 
-        timePickerBtn.setOnClickListener(new View.OnClickListener() {
+        imgPalette.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ColorPickerDialog.newBuilder()
+                        .setDialogType(ColorPickerDialog.TYPE_PRESETS)
+                        .setAllowPresets(false)
+                        .setDialogId(DIALOG_PRESET_ID)
+                        .setColor(Color.parseColor("#ab250e"))
+                        .setShowAlphaSlider(false)
+                        .show(DayCalendar.this);
+            }
+        });
 
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+    @Override
+    public void onColorSelected(int dialogId, final int color) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                textColor.setBackgroundColor(color);
+                colorData.setColor(color);
             }
         });
 
@@ -97,36 +121,6 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
                 Intent resultIntent = new Intent();
                 setResult(RESULT_OK, resultIntent);
                 finish();
-            }
-        });
-
-        imgPalette.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ColorPickerDialog.newBuilder()
-                        .setDialogType(ColorPickerDialog.TYPE_PRESETS)
-                        .setAllowPresets(false)
-                        .setDialogId(DIALOG_PRESET_ID)
-                        .setColor(Color.parseColor("#ab250e"))
-                        .setShowAlphaSlider(false)
-                        .show(DayCalendar.this);
-            }
-        });
-
-        cancelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-    }
-
-    @Override
-    public void onColorSelected(int dialogId, final int color) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                textColor.setBackgroundColor(color);
             }
         });
     }

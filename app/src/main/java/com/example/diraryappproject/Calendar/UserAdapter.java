@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.diraryappproject.ColorData;
 import com.example.diraryappproject.R;
+import com.example.diraryappproject.RingDrawable;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -43,6 +45,7 @@ public class UserAdapter extends BaseAdapter {
     DateFormat dateFormat;
     private RecyclerAdaptor recyclerAdaptor;
     private ArrayList<Recyclers> custom = new ArrayList<Recyclers>();
+    private ColorData colorData;
 
 
     public UserAdapter(Activity context, Calendar monthCalendar, RecyclerAdaptor recyclerAdaptor) {
@@ -175,8 +178,15 @@ public class UserAdapter extends BaseAdapter {
                     } else if ((Integer.parseInt(gridvalue) < 7) && (position > 28)) {
 
                     } else {
+                        RingDrawable ringDrawable = new RingDrawable(0,18,3,2);
+                        if (colorData == null) {
+                            ringDrawable.setColor(Color.parseColor("#ab250e"));
+                        }else {
+                        ringDrawable.setColor(colorData.getColor());
+                        }
+                        ringDrawable.setSize(1,0);
                         view.setBackgroundColor(Color.parseColor("#343434"));
-                        view.setBackgroundResource(R.drawable.rounded_calendar);
+                        view.setBackground(ringDrawable);
                         dayView.setTextColor(Color.parseColor("#696969"));
                     }
                 }

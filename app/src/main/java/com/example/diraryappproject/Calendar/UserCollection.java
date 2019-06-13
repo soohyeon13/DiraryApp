@@ -27,5 +27,6 @@ public class UserCollection {
         return instance;
     }
 
-    public static void add(UserCollection userCollection) { instance.add(userCollection); }
+    public static void add(UserCollection userCollection) { instance.add(userCollection);}
+    public static void remove(UserCollection userCollection) {instance.remove(userCollection);}
 }
