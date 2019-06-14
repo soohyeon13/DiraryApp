@@ -182,8 +182,6 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
         userAdapter.refreshDays();
         userAdapter.notifyDataSetChanged();
         textMonth.setText(android.text.format.DateFormat.format("yyyy년MM월", calMonth));
-
-
     }
 
     private void setPreviousMonth() {
@@ -217,7 +215,8 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(this, "item1 select", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.item2:
-                new GoogleOAuth();
+                Intent intent = new Intent(this, GoogleOAuth.class);
+                startActivity(intent);
                 Toast.makeText(this, "item2 select", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.item3:

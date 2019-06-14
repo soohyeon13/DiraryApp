@@ -10,8 +10,12 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.text.method.ScrollingMovementMethod;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -48,25 +52,32 @@ public class GoogleOAuth extends AppCompatActivity implements EasyPermissions.Pe
     static final int REQUEST_PERMISSION_GET_ACCOUNTS = 1003;
     private static final String PREF_ACCOUNT_NAME = "accountName";
     ProgressDialog mProgress;
+    private TextView mResultText;
 
-    public GoogleOAuth() {
+    //    public GoogleOAuth() {
+//        getResultsFromApi();
+//        mCredential = GoogleAccountCredential.usingOAuth2(
+//                getApplicationContext(),
+//                Arrays.asList(SCOPES)
+//        ).setBackOff(new ExponentialBackOff());
+//    }
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.google_oauth);
+        mProgress = new ProgressDialog(this);
+        mProgress.setMessage("Google Calendar API 호출중...");
+        mResultText = (TextView) findViewById(R.id.textview_main_result);
         mCredential = GoogleAccountCredential.usingOAuth2(
                 getApplicationContext(),
                 Arrays.asList(SCOPES)
         ).setBackOff(new ExponentialBackOff());
         getResultsFromApi();
+
+        mResultText.setVerticalScrollBarEnabled(true);
+        mResultText.setMovementMethod(new ScrollingMovementMethod());
+
     }
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.drawer_calendar);
-//
-//        mCredential = GoogleAccountCredential.usingOAuth2(
-//                getApplicationContext(),
-//                Arrays.asList(SCOPES)
-//        ).setBackOff(new ExponentialBackOff());
-//        getResultsFromApi();
-//    }
 
     public String getResultsFromApi() {
         String output = null;
@@ -172,6 +183,7 @@ public class GoogleOAuth extends AppCompatActivity implements EasyPermissions.Pe
     }
 
     private boolean isGooglePlayServicesAvailable() {
+
         GoogleApiAvailability googleApiAvailability =
                 GoogleApiAvailability.getInstance();
         final int connectionStatusCode =
@@ -212,6 +224,7 @@ public class GoogleOAuth extends AppCompatActivity implements EasyPermissions.Pe
         @Override
         protected void onPreExecute() {
             mProgress.show();
+            mResultText.setText("");
         }
 
         @Override
@@ -244,6 +257,7 @@ public class GoogleOAuth extends AppCompatActivity implements EasyPermissions.Pe
         @Override
         protected void onPostExecute(String output) {
             mProgress.hide();
+            mResultText.setText(TextUtils.join("\n\n", eventStrings));
         }
     }
 }
