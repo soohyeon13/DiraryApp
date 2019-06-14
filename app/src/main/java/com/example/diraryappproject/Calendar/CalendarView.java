@@ -28,7 +28,6 @@ import android.widget.Toast;
 import com.example.diraryappproject.GoogleOAuth;
 import com.example.diraryappproject.R;
 import com.example.diraryappproject.crud.DayCalendar;
-import com.example.diraryappproject.crud.MemoCalendar;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -48,8 +47,6 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
 
     private RecyclerView dialogRecyclerView;
     private RecyclerAdaptor recyclerAdaptor;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,8 +135,6 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.fab2:
                 anim();
-                Intent intent1 = new Intent(CalendarView.this, MemoCalendar.class);
-                startActivityForResult(intent1,300);
                 break;
         }
     }
@@ -167,7 +162,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
 
     private void setDialogRecyclerView() {
         dialogRecyclerView = findViewById(R.id.recyclerList);
-        recyclerAdaptor = new RecyclerAdaptor(this, new ArrayList<Recyclers>());
+        recyclerAdaptor = new RecyclerAdaptor(this, new ArrayList<UserCollection>());
         dialogRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         dialogRecyclerView.setAdapter(recyclerAdaptor);
     }

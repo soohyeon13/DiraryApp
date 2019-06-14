@@ -13,10 +13,10 @@ import com.example.diraryappproject.R;
 import java.util.ArrayList;
 
 public class RecyclerAdaptor extends RecyclerView.Adapter<RecyclerAdaptor.ViewHolder>{
-    private ArrayList<Recyclers> custom;
+    private ArrayList<UserCollection> custom;
     private Activity context;
 
-    public RecyclerAdaptor(Activity context, ArrayList<Recyclers> custom) {
+    public RecyclerAdaptor(Activity context, ArrayList<UserCollection> custom) {
         this.context = context;
         this.custom = custom;
     }
@@ -31,12 +31,11 @@ public class RecyclerAdaptor extends RecyclerView.Adapter<RecyclerAdaptor.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdaptor.ViewHolder viewHolder, int i) {
-
-        viewHolder.textTitle.setText("Title :" +custom.get(i).getTitles());
-        viewHolder.textLocation.setText("Location :"+custom.get(i).getLocations());
-        viewHolder.textSubject.setText("Subject :" +custom.get(i).getSubjects());
-        viewHolder.textDueDate.setText("Due Date :"+custom.get(i).getDuedates());
-        viewHolder.textDescription.setText("Description :" + custom.get(i).getDescripts());
+        viewHolder.textTitle.setText("Title :" +custom.get(i).getName());
+        viewHolder.textLocation.setText("Location :"+custom.get(i).getLocation());
+        viewHolder.textSubject.setText("Subject :" +custom.get(i).getSubject());
+        viewHolder.textDueDate.setText("Due Date :"+custom.get(i).getDate());
+        viewHolder.textDescription.setText("Description :" + custom.get(i).getDescription());
     }
 
     @Override
@@ -44,7 +43,8 @@ public class RecyclerAdaptor extends RecyclerView.Adapter<RecyclerAdaptor.ViewHo
         return custom.size();
     }
 
-    public void setList(ArrayList<Recyclers> matchList) {
+
+    public void setList(ArrayList<UserCollection> matchList) {
         this.custom = matchList;
         notifyDataSetChanged();
     }
@@ -58,7 +58,6 @@ public class RecyclerAdaptor extends RecyclerView.Adapter<RecyclerAdaptor.ViewHo
             textDueDate = itemView.findViewById(R.id.tv_desc);
             textDescription = itemView.findViewById(R.id.tv_class);
             textLocation = itemView.findViewById(R.id.tv_location);
-
         }
     }
 }

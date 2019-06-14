@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserCollection {
+    private String title;
     private String subject;
     private String description;
     private String name;
     private String location;
     private String date;
 
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
     public void setSubject(String value) {this.subject = value;}
     public String getSubject() {return this.subject;}
     public void setDescription(String value) {this.description = value;}

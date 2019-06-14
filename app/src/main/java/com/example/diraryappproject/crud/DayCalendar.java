@@ -84,24 +84,6 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
                         .show(DayCalendar.this);
             }
         });
-
-        cancelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-    }
-    @Override
-    public void onColorSelected(int dialogId, final int color) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                textColor.setBackgroundColor(color);
-                colorData.setColor(color);
-            }
-        });
-
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,6 +103,24 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
                 Intent resultIntent = new Intent();
                 setResult(RESULT_OK, resultIntent);
                 finish();
+            }
+        });
+
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+
+    @Override
+    public void onColorSelected(int dialogId, final int color) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                textColor.setBackgroundColor(color);
+                colorData.setColor(color);
             }
         });
     }

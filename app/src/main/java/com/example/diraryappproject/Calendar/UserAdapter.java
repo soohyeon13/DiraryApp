@@ -44,7 +44,7 @@ public class UserAdapter extends BaseAdapter {
     String currentDateString;
     DateFormat dateFormat;
     private RecyclerAdaptor recyclerAdaptor;
-    private ArrayList<Recyclers> custom = new ArrayList<Recyclers>();
+    private ArrayList<UserCollection> custom = new ArrayList<UserCollection>();
     private ColorData colorData;
 
 
@@ -213,19 +213,19 @@ public class UserAdapter extends BaseAdapter {
         }
     }
 
-    private ArrayList<Recyclers> getMatchList(String s) {
+    private ArrayList<UserCollection> getMatchList(String s) {
         try {
             JSONArray jsonArray = new JSONArray(s);
-            custom = new ArrayList<Recyclers>();
+            custom = new ArrayList<UserCollection>();
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.optJSONObject(i);
 
-                Recyclers recyclers = new Recyclers();
+                UserCollection recyclers = new UserCollection();
 
-                recyclers.setTitles(jsonObject.optString("hnames"));
-                recyclers.setSubjects(jsonObject.optString("hsubject"));
-                recyclers.setDescripts(jsonObject.optString("descript"));
-                recyclers.setLocations((jsonObject.optString("location")));
+                recyclers.setName(jsonObject.optString("hnames"));
+                recyclers.setSubject(jsonObject.optString("hsubject"));
+                recyclers.setDescription(jsonObject.optString("descript"));
+                recyclers.setLocation((jsonObject.optString("location")));
                 custom.add(recyclers);
             }
         } catch (JSONException e) {

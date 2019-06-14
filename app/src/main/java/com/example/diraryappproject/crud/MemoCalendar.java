@@ -1,7 +1,6 @@
 package com.example.diraryappproject.crud;
 
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -111,9 +110,9 @@ public class MemoCalendar extends AppCompatActivity implements ColorPickerDialog
                     setDescription(description);
                     setDate(day);
                 }});
-                Intent resultIntent = new Intent();
-                setResult(RESULT_OK, resultIntent);
-                finish();
+//                Intent resultIntent = new Intent();
+//                setResult(RESULT_OK, resultIntent);
+//                finish();
             }
         });
 
