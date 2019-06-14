@@ -1,6 +1,7 @@
 package com.example.diraryappproject.crud;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +29,7 @@ public class MemoCalendar extends AppCompatActivity implements ColorPickerDialog
     private int mDay;
     private static final int DIALOG_DEFAULT_ID = 0;
     private static final int DIALOG_PRESET_ID = 1;
-    private ColorData colorData;
+    ColorData colorData;
 
     DatePickerDialog.OnDateSetListener listener;
 
@@ -77,25 +78,6 @@ public class MemoCalendar extends AppCompatActivity implements ColorPickerDialog
             }
         });
 
-        cancelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-    }
-
-
-    @Override
-    public void onColorSelected(int dialogId, final int color) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                textColor.setBackgroundColor(color);
-                colorData.setColor(color);
-            }
-        });
-
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,12 +92,28 @@ public class MemoCalendar extends AppCompatActivity implements ColorPickerDialog
                     setDescription(description);
                     setDate(day);
                 }});
-//                Intent resultIntent = new Intent();
-//                setResult(RESULT_OK, resultIntent);
-//                finish();
+                Intent resultIntent = new Intent();
+                setResult(RESULT_OK, resultIntent);
+                finish();
             }
         });
 
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+    }
+    @Override
+    public void onColorSelected(int dialogId, final int color) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                textColor.setBackgroundColor(color);
+                colorData.setColor(color);
+            }
+        });
     }
 
     @Override

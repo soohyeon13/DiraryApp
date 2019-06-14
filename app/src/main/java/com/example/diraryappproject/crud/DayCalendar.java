@@ -30,7 +30,7 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
     private int mDay;
     private static final int DIALOG_DEFAULT_ID = 0;
     private static final int DIALOG_PRESET_ID = 1;
-    private ColorData colorData;
+    ColorData colorData;
 
     DatePickerDialog.OnDateSetListener listener;
 
@@ -120,7 +120,7 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
             @Override
             public void run() {
                 textColor.setBackgroundColor(color);
-                colorData.setColor(color);
+//                colorData.setColor(color);
             }
         });
     }

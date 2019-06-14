@@ -28,6 +28,7 @@ import android.widget.Toast;
 import com.example.diraryappproject.GoogleOAuth;
 import com.example.diraryappproject.R;
 import com.example.diraryappproject.crud.DayCalendar;
+import com.example.diraryappproject.crud.MemoCalendar;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -46,7 +47,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
     private FloatingActionButton fab, fab1, fab2;
 
     private RecyclerView dialogRecyclerView;
-    private RecyclerAdaptor recyclerAdaptor;
+    private RecyclerAdapter recyclerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +68,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
 
         calMonth = (GregorianCalendar) GregorianCalendar.getInstance();
         calMonthClone = (GregorianCalendar) calMonth.clone();
-        userAdapter = new UserAdapter(CalendarView.this, calMonth, recyclerAdaptor);
+        userAdapter = new UserAdapter(CalendarView.this, calMonth, recyclerAdapter);
 
         textMonth = findViewById(R.id.textMonth);
         textMonth.setText(DateFormat.format("yyyy년MM월", calMonth));
@@ -134,6 +135,8 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 startActivityForResult(intent, 200);
                 break;
             case R.id.fab2:
+                Intent intent1 = new Intent(CalendarView.this, MemoCalendar.class);
+                startActivityForResult(intent1,300);
                 anim();
                 break;
         }
@@ -162,9 +165,9 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
 
     private void setDialogRecyclerView() {
         dialogRecyclerView = findViewById(R.id.recyclerList);
-        recyclerAdaptor = new RecyclerAdaptor(this, new ArrayList<UserCollection>());
+        recyclerAdapter = new RecyclerAdapter(this, new ArrayList<UserCollection>());
         dialogRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        dialogRecyclerView.setAdapter(recyclerAdaptor);
+        dialogRecyclerView.setAdapter(recyclerAdapter);
     }
 
     private void setNextMonth() {
@@ -208,14 +211,11 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-            case R.id.item1:
-                Toast.makeText(this, "item1 select", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.item2:
+            case R.id.google:
                 Intent intent = new Intent(this, GoogleOAuth.class);
                 startActivity(intent);
                 break;
-            case R.id.item3:
+            case R.id.logout:
                 Toast.makeText(this, "item3 select", Toast.LENGTH_SHORT).show();
                 break;
         }

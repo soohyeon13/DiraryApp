@@ -43,19 +43,19 @@ public class UserAdapter extends BaseAdapter {
     String itemValue;
     String currentDateString;
     DateFormat dateFormat;
-    private RecyclerAdaptor recyclerAdaptor;
+    private RecyclerAdapter recyclerAdapter;
     private ArrayList<UserCollection> custom = new ArrayList<UserCollection>();
     private ColorData colorData;
 
 
-    public UserAdapter(Activity context, Calendar monthCalendar, RecyclerAdaptor recyclerAdaptor) {
+    public UserAdapter(Activity context, Calendar monthCalendar, RecyclerAdapter recyclerAdapter) {
 
         UserAdapter.dayString = new ArrayList<String>();
         Locale.setDefault(Locale.KOREAN);
         month = monthCalendar;
         selectDate = (GregorianCalendar) monthCalendar.clone();
         this.context = context;
-        this.recyclerAdaptor = recyclerAdaptor;
+        this.recyclerAdapter = recyclerAdapter;
         month.set(GregorianCalendar.DAY_OF_MONTH, 1);
 
         this.items = new ArrayList<String>();
@@ -209,7 +209,7 @@ public class UserAdapter extends BaseAdapter {
             }
         }
         if (jsonArray.length() != 0) {
-            recyclerAdaptor.setList(getMatchList(jsonArray + ""));
+            recyclerAdapter.setList(getMatchList(jsonArray + ""));
         }
     }
 
@@ -220,13 +220,13 @@ public class UserAdapter extends BaseAdapter {
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.optJSONObject(i);
 
-                UserCollection recyclers = new UserCollection();
+                UserCollection userCollection = new UserCollection();
 
-                recyclers.setName(jsonObject.optString("hnames"));
-                recyclers.setSubject(jsonObject.optString("hsubject"));
-                recyclers.setDescription(jsonObject.optString("descript"));
-                recyclers.setLocation((jsonObject.optString("location")));
-                custom.add(recyclers);
+                userCollection.setName(jsonObject.optString("hnames"));
+                userCollection.setSubject(jsonObject.optString("hsubject"));
+                userCollection.setDescription(jsonObject.optString("descript"));
+                userCollection.setLocation((jsonObject.optString("location")));
+                custom.add(userCollection);
             }
         } catch (JSONException e) {
             e.printStackTrace();

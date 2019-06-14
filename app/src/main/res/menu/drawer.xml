@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
-        android:id="@+id/item1"
-        android:icon="@mipmap/ic_launcher_round"
-        android:title="가져오기" />
-
-    <item
-        android:id="@+id/item2"
+        android:id="@+id/google"
         android:icon="@drawable/ic_icons8_google"
         android:title="Google" />
     <item
-        android:id="@+id/item3"
+        android:id="@+id/logout"
         android:icon="@drawable/icons8_exit"
         android:title="로그아웃" />
 </menu>
