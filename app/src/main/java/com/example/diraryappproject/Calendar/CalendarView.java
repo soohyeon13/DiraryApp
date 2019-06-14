@@ -28,6 +28,7 @@ import android.widget.Toast;
 import com.example.diraryappproject.GoogleOAuth;
 import com.example.diraryappproject.R;
 import com.example.diraryappproject.crud.DayCalendar;
+import com.example.diraryappproject.crud.MemoCalendar;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
@@ -137,6 +138,8 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.fab2:
                 anim();
+                Intent intent1 = new Intent(CalendarView.this, MemoCalendar.class);
+                startActivityForResult(intent1,300);
                 break;
         }
     }
@@ -175,7 +178,6 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
         } else {
             calMonth.set(GregorianCalendar.MONTH, calMonth.get(GregorianCalendar.MONTH) + 1);
         }
-
     }
 
     private void refreshCalendar() {
@@ -217,7 +219,6 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
             case R.id.item2:
                 Intent intent = new Intent(this, GoogleOAuth.class);
                 startActivity(intent);
-                Toast.makeText(this, "item2 select", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.item3:
                 Toast.makeText(this, "item3 select", Toast.LENGTH_SHORT).show();

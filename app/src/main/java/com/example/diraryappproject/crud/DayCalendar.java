@@ -22,7 +22,7 @@ import java.util.Calendar;
 
 public class DayCalendar extends AppCompatActivity implements ColorPickerDialogListener {
     EditText editTitle, editLocation, editSubject, editDescription;
-    Button datePickerBtn, timePickerBtn, submitBtn, cancelBtn;
+    Button datePickerBtn, submitBtn, cancelBtn;
     TextView textColor;
     ImageButton imgPalette;
     private int mYear;

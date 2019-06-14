@@ -29,6 +29,7 @@
         <activity android:name=".Calendar.CalendarView"></activity>
         <activity android:name=".GoogleOAuth"></activity>
         <activity android:name=".crud.DayCalendar"></activity>
+        <activity android:name=".crud.MemoCalendar"></activity>
 
     </application>
 

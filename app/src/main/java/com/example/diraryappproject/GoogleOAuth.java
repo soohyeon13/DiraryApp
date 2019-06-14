@@ -193,17 +193,14 @@ public class GoogleOAuth extends AppCompatActivity implements EasyPermissions.Pe
 
     @Override
     public void onPermissionsGranted(int requestCode, List<String> perms) {
-
     }
 
     @Override
     public void onPermissionsDenied(int requestCode, List<String> perms) {
-
     }
 
     @Override
     public void onRequestPermissionsResult(int i, @NonNull String[] strings, @NonNull int[] ints) {
-
     }
 
     public class MakeRequestTask extends AsyncTask<Void, Void, String> {
