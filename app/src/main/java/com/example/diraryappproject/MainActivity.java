@@ -14,7 +14,7 @@ import com.example.diraryappproject.Calendar.CalendarView;
 public class MainActivity extends AppCompatActivity {
     EditText loginEmail, loginPassword;
     TextView noLoginEmail;
-    Button loginBtn;
+    Button loginBtn,noEmailBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         loginPassword = findViewById(R.id.passwordEdit);
 
         loginBtn = findViewById(R.id.loginBtn);
+        noEmailBtn = findViewById(R.id.noEmailBtn);
 
         noLoginEmail =findViewById(R.id.noEmailBtn);
 
@@ -37,6 +38,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        noEmailBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 }
