@@ -70,6 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center|top"
         android:background="#00ff0000"
+        android:textStyle="bold"
         style="?android:attr/borderlessButtonStyle"
         android:text="아이디가 없으신가요?"/>
 

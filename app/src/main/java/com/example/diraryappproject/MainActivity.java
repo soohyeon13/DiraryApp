@@ -1,6 +1,7 @@
 package com.example.diraryappproject;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         loginBtn = findViewById(R.id.loginBtn);
         noEmailBtn = findViewById(R.id.noEmailBtn);
+        noEmailBtn.setPaintFlags(noEmailBtn.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         noLoginEmail =findViewById(R.id.noEmailBtn);
 
