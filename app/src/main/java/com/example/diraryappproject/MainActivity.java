@@ -16,7 +16,7 @@ import com.example.diraryappproject.login.SignUpActivity;
 public class MainActivity extends AppCompatActivity {
     EditText loginEmail, loginPassword;
     TextView noLoginEmail;
-    Button loginBtn,noEmailBtn;
+    Button loginBtn, signUpBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         loginPassword = findViewById(R.id.passwordEdit);
 
         loginBtn = findViewById(R.id.loginBtn);
-        noEmailBtn = findViewById(R.id.noEmailBtn);
-        noEmailBtn.setPaintFlags(noEmailBtn.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        signUpBtn = findViewById(R.id.noEmailBtn);
+        signUpBtn.setPaintFlags(signUpBtn.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         noLoginEmail =findViewById(R.id.noEmailBtn);
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        noEmailBtn.setOnClickListener(new View.OnClickListener() {
+        signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
