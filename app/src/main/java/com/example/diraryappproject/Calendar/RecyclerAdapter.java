@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.diraryappproject.R;
@@ -49,8 +50,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         notifyDataSetChanged();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView textTitle,textSubject,textDueDate,textDescription,textLocation;
+        ImageButton imageButton,imageBtnUpdate;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textTitle = itemView.findViewById(R.id.tv_name);
@@ -58,6 +60,25 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             textDueDate = itemView.findViewById(R.id.tv_desc);
             textDescription = itemView.findViewById(R.id.tv_class);
             textLocation = itemView.findViewById(R.id.tv_location);
+            imageButton = itemView.findViewById(R.id.imgItemRemove);
+            imageButton.setOnClickListener(this);
+            imageBtnUpdate = itemView.findViewById(R.id.imgItemUpdate);
+            imageBtnUpdate.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (v.equals(imageButton)) {
+                removedAt(getPosition());
+            }
+            if (v.equals(imageBtnUpdate)) {
+            }
+        }
+
+        public void removedAt(int itemId) {
+            custom.remove(itemId);
+            notifyItemRemoved(itemId);
+            notifyItemRangeChanged(itemId,custom.size());
         }
     }
 }

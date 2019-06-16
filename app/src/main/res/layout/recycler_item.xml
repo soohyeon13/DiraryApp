@@ -91,31 +91,25 @@
             android:orientation="vertical"
             >
 
-            <ImageView
+            <ImageButton
+                android:id="@+id/imgItemRemove"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
+                android:background="#FFFFFF"
                 android:src="@drawable/icons8_cancel" />
+
+            <ImageButton
+                android:id="@+id/imgItemUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="#FFFFFF"
+                android:src="@drawable/icons8_hammer_48"/>
 
         </LinearLayout>
 
     </LinearLayout>
-
-
-    <!--<TextView-->
-    <!--android:id="@+id/tv_section"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_below="@+id/tv_class"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_marginLeft="10dp"-->
-    <!--android:layout_marginTop="5dp"-->
-    <!--android:layout_marginRight="10dp"-->
-    <!--android:paddingLeft="10dp"-->
-    <!--android:text="event on "-->
-    <!--android:textColor="#696969"-->
-    <!--android:textSize="16dp"-->
-    <!--android:visibility="gone" />-->
 
     <View
         android:id="@+id/visdf"

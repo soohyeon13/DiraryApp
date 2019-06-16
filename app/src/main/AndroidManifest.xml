@@ -26,7 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".login.SignUpActivity"></activity>
         <activity android:name=".Calendar.CalendarView"></activity>
         <activity android:name=".GoogleOAuth"></activity>
         <activity android:name=".crud.DayCalendar"></activity>

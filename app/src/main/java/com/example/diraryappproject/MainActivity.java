@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.diraryappproject.Calendar.CalendarView;
+import com.example.diraryappproject.login.SignUpActivity;
 
 public class MainActivity extends AppCompatActivity {
     EditText loginEmail, loginPassword;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         noEmailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,SignUpActivity.class);
+                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
                 startActivity(intent);
             }
         });

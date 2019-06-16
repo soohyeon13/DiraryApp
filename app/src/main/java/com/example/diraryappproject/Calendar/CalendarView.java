@@ -55,6 +55,8 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.drawer_calendar);
 
+
+
         setDialogRecyclerView();
 
         for (int i = 0; i < 4; i++)
