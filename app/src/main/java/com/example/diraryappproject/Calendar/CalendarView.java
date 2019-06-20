@@ -59,14 +59,14 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
 
         setDialogRecyclerView();
 
-        for (int i = 0; i < 4; i++)
-            UserCollection.add(new UserCollection() {{
-                setDate("2019-06-05");
-                setName("김수현");
-                setLocation("406");
-                setDescription("test");
-                setSubject("컨피던스");
-            }});
+//        for (int i = 0; i < 4; i++)
+//            UserCollection.add(new UserCollection() {{
+//                setDate("2019-06-05");
+//                setName("김수현");
+//                setLocation("406");
+//                setDescription("test");
+//                setSubject("컨피던스");
+//            }});
 
         calMonth = (GregorianCalendar) GregorianCalendar.getInstance();
         calMonthClone = (GregorianCalendar) calMonth.clone();

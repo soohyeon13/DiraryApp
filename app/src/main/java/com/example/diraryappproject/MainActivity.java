@@ -4,15 +4,17 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Base64;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.diraryappproject.Calendar.CalendarView;
-import com.example.diraryappproject.login.SignUpActivity;
+import com.example.diraryappproject.signup.SignUpActivity;
 import com.example.diraryappproject.task.HttpPostTask;
 import com.google.android.gms.common.util.Base64Utils;
 
@@ -35,27 +37,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         loginBtn = findViewById(R.id.loginBtn);
+        loginEmail = findViewById(R.id.emailEdit);
+        loginPassword = findViewById(R.id.passwordEdit);
         signUpBtn = findViewById(R.id.noEmailBtn);
         signUpBtn.setPaintFlags(signUpBtn.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-
-        noLoginEmail =findViewById(R.id.noEmailBtn);
+        loginPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+        noLoginEmail = findViewById(R.id.noEmailBtn);
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                loginEmail = findViewById(R.id.emailEdit);
-                loginPassword = findViewById(R.id.passwordEdit);
+
                 String user = loginEmail.getText().toString();
                 String password = loginPassword.getText().toString();
-                String text = user+"&"+password;
+                String text = user + "&" + password;
                 try {
                     String auth = encode(text);
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
                 final String authorization = Base64Utils.encode((user + ":" + password).getBytes());
-                final String url_signin = "http://192.168.0.60:8080/user/me";
+                final String url_signin = "http://172.19.4.85:8080/user/me";
                 final String url_authorization = "Basic " + authorization;
                 JSONObject result = null;
                 try {
@@ -69,12 +72,17 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 try {
-                    if(result.getBoolean("result")) {
-                        Intent intent = new Intent(MainActivity.this, CalendarView.class);
-                        startActivity(intent);
-                    }
+                    JSONObject userResult = result.getJSONObject("user");
+                    User.setUser(userResult);
+//                    int a = User.getUser().getInt("id");
+//                    System.out.println(a);
+                    Intent intent = new Intent(MainActivity.this, CalendarView.class);
+                    startActivity(intent);
+
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this, "아이디/비밀번호를 확인해주세요.", Toast.LENGTH_LONG).show();
+                } catch (NullPointerException e) {
+                    Toast.makeText(MainActivity.this, "아이디/비밀번호를 확인해주세요.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -87,9 +95,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     public static String encode(String user) throws UnsupportedEncodingException {
         byte[] data = user.getBytes("UTF-8");
-        return Base64.encodeToString(data,Base64.DEFAULT);
+        return Base64.encodeToString(data, Base64.DEFAULT);
     }
 
 }

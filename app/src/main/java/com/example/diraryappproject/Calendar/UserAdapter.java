@@ -200,10 +200,10 @@ public class UserAdapter extends BaseAdapter {
         for (int i = 0; i < len; i++) {
             if (UserCollection.getInstance().get(i).getDate().equals(date)) {
                 HashMap<String, String> mapList = new HashMap<String, String>();
-                mapList.put("hnames", UserCollection.getInstance().get(i).getName());
-                mapList.put("hsubject", UserCollection.getInstance().get(i).getSubject());
+                mapList.put("hnames", UserCollection.getInstance().get(i).getTitle());
+                mapList.put("hsubject", UserCollection.getInstance().get(i).getLocation());
+                mapList.put("location",UserCollection.getInstance().get(i).getSubject());
                 mapList.put("descript", UserCollection.getInstance().get(i).getDescription());
-                mapList.put("location",UserCollection.getInstance().get(i).getLocation());
                 JSONObject jsonObject = new JSONObject(mapList);
                 jsonArray.put(jsonObject);
             }
@@ -222,10 +222,10 @@ public class UserAdapter extends BaseAdapter {
 
                 UserCollection userCollection = new UserCollection();
 
-                userCollection.setName(jsonObject.optString("hnames"));
-                userCollection.setSubject(jsonObject.optString("hsubject"));
+                userCollection.setTitle(jsonObject.optString("hnames"));
+                userCollection.setLocation(jsonObject.optString("hsubject"));
+                userCollection.setSubject((jsonObject.optString("location")));
                 userCollection.setDescription(jsonObject.optString("descript"));
-                userCollection.setLocation((jsonObject.optString("location")));
                 custom.add(userCollection);
             }
         } catch (JSONException e) {

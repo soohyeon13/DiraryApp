@@ -11,6 +11,8 @@ public class UserCollection {
     private String location;
     private String date;
 
+    public void setTitle(String value) {this.title = value;}
+    public String getTitle(){return this .title;}
     public void setSubject(String value) {this.subject = value;}
     public String getSubject() {return this.subject;}
     public void setDescription(String value) {this.description = value;}

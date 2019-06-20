@@ -15,8 +15,12 @@ import android.widget.TextView;
 import com.example.diraryappproject.Calendar.UserCollection;
 import com.example.diraryappproject.ColorData;
 import com.example.diraryappproject.R;
+import com.example.diraryappproject.User;
 import com.jaredrummler.android.colorpicker.ColorPickerDialog;
 import com.jaredrummler.android.colorpicker.ColorPickerDialogListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Calendar;
 
@@ -33,6 +37,7 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
     ColorData colorData;
 
     DatePickerDialog.OnDateSetListener listener;
+    private String url_home = "http://172.19.4.85:8080/daycalendar/add";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +98,21 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
                 final String description = editDescription.getText().toString();
                 final String day = datePickerBtn.getText().toString();
 
+                JSONObject jsonObject = new JSONObject();
+                try {
+                    jsonObject.put("title",title);
+                    jsonObject.put("eventLocation",location);
+                    jsonObject.put("event_Subject",subject);
+                    jsonObject.put("eventDescription",description);
+                    jsonObject.put("eventStart",day);
+                    jsonObject.put("user_id", User.getUser().getInt("id"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                System.out.println(jsonObject);
+                new CalendarPost(url_home,jsonObject).execute();
+
                 UserCollection.add(new UserCollection() {{
                     setName(title);
                     setLocation(location);
@@ -100,6 +120,9 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
                     setDescription(description);
                     setDate(day);
                 }});
+
+
+
                 Intent resultIntent = new Intent();
                 setResult(RESULT_OK, resultIntent);
                 finish();
@@ -130,3 +153,5 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
 
     }
 }
+
+
