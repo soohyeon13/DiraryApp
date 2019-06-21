@@ -97,7 +97,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:background="#FFFFFF"
-                android:src="@drawable/icons8_cancel" />
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/icons8_delete_24" />
 
             <ImageButton
                 android:id="@+id/imgItemUpdate"
@@ -105,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:background="#FFFFFF"
-                android:src="@drawable/icons8_hammer_48"/>
+                android:src="@drawable/icons8_return_24"/>
 
         </LinearLayout>
 

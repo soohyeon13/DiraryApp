@@ -37,13 +37,13 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
     ColorData colorData;
 
     DatePickerDialog.OnDateSetListener listener;
-    private String url_home = "http://172.19.4.85:8080/daycalendar/add";
+    private String url_home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daycalendar);
-
+        url_home = getString(R.string.base_uri) +"/daycalendar/add";
         final Calendar calendar = Calendar.getInstance();
         mYear = calendar.get(Calendar.YEAR);
         mMonth=calendar.get(Calendar.MONTH);
@@ -52,6 +52,7 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
         textColor = findViewById(R.id.textColor);
 
         editTitle = findViewById(R.id.editTitle);
+        editTitle.setPrivateImeOptions("defaultInputmode=korean;");
         editDescription = findViewById(R.id.editDescription);
         editLocation = findViewById(R.id.editLocation);
         editSubject = findViewById(R.id.editSubject);
@@ -114,14 +115,12 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
                 new CalendarPost(url_home,jsonObject).execute();
 
                 UserCollection.add(new UserCollection() {{
-                    setName(title);
+                    setTitle(title);
                     setLocation(location);
                     setSubject(subject);
                     setDescription(description);
                     setDate(day);
                 }});
-
-
 
                 Intent resultIntent = new Intent();
                 setResult(RESULT_OK, resultIntent);

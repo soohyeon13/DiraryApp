@@ -21,6 +21,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
+            android:privateImeOptions="defaultInputmode=korea;"
             android:hint="일정" />
 
     <View style="@style/Divider"/>
@@ -67,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="일단 넣음"
+        android:hint="부제"
         />
 
     <EditText

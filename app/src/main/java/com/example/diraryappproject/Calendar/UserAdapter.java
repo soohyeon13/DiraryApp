@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.example.diraryappproject.ColorData;
 import com.example.diraryappproject.R;
-import com.example.diraryappproject.RingDrawable;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -124,7 +123,6 @@ public class UserAdapter extends BaseAdapter {
         }
 
 
-
         dayView = view.findViewById(R.id.date);
         String[] separatedTime = dayString.get(position).split("-");
 
@@ -178,16 +176,20 @@ public class UserAdapter extends BaseAdapter {
                     } else if ((Integer.parseInt(gridvalue) < 7) && (position > 28)) {
 
                     } else {
-                        RingDrawable ringDrawable = new RingDrawable(0,18,3,2);
-                        if (colorData == null) {
-                            ringDrawable.setColor(Color.parseColor("#ab250e"));
-                        }else {
-                        ringDrawable.setColor(colorData.getColor());
-                        }
-                        ringDrawable.setSize(1,0);
                         view.setBackgroundColor(Color.parseColor("#343434"));
-                        view.setBackground(ringDrawable);
+                        view.setBackgroundResource(R.drawable.rounded_calendar);
                         dayView.setTextColor(Color.parseColor("#696969"));
+//                    else {
+//                        RingDrawable ringDrawable = new RingDrawable(0,18,3,2);
+//                        if (colorData == null) {
+//                            ringDrawable.setColor(Color.parseColor("#ab250e"));
+//                        }else {
+//                        ringDrawable.setColor(colorData.getColor());
+//                        }
+//                        ringDrawable.setSize(1,0);
+//                        view.setBackgroundColor(Color.parseColor("#343434"));
+//                        view.setBackground(ringDrawable);
+//                        dayView.setTextColor(Color.parseColor("#696969"));
                     }
                 }
             }
@@ -202,7 +204,7 @@ public class UserAdapter extends BaseAdapter {
                 HashMap<String, String> mapList = new HashMap<String, String>();
                 mapList.put("hnames", UserCollection.getInstance().get(i).getTitle());
                 mapList.put("hsubject", UserCollection.getInstance().get(i).getLocation());
-                mapList.put("location",UserCollection.getInstance().get(i).getSubject());
+                mapList.put("location", UserCollection.getInstance().get(i).getSubject());
                 mapList.put("descript", UserCollection.getInstance().get(i).getDescription());
                 JSONObject jsonObject = new JSONObject(mapList);
                 jsonArray.put(jsonObject);

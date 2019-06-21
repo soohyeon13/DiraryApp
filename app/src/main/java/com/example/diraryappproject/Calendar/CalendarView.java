@@ -26,12 +26,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.diraryappproject.GoogleOAuth;
+import com.example.diraryappproject.MainActivity;
 import com.example.diraryappproject.R;
+import com.example.diraryappproject.User;
 import com.example.diraryappproject.crud.DayCalendar;
 import com.example.diraryappproject.crud.MemoCalendar;
+import com.example.diraryappproject.task.JsonTask;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.concurrent.ExecutionException;
 
 public class CalendarView extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemClickListener, View.OnClickListener {
     public GregorianCalendar calMonth, calMonthClone;
@@ -48,6 +56,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
 
     private RecyclerView dialogRecyclerView;
     private RecyclerAdapter recyclerAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,17 +65,9 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.drawer_calendar);
 
 
-
         setDialogRecyclerView();
 
-//        for (int i = 0; i < 4; i++)
-//            UserCollection.add(new UserCollection() {{
-//                setDate("2019-06-05");
-//                setName("김수현");
-//                setLocation("406");
-//                setDescription("test");
-//                setSubject("컨피던스");
-//            }});
+
 
         calMonth = (GregorianCalendar) GregorianCalendar.getInstance();
         calMonthClone = (GregorianCalendar) calMonth.clone();
@@ -76,7 +77,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
         textMonth.setText(DateFormat.format("yyyy년MM월", calMonth));
 
         initLayout();
-
+        jsonRead();
         ImageButton previousMonth = findViewById(R.id.imgPrevBtn);
         previousMonth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +125,31 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
         });
     }
 
+    private void jsonRead() {
+        try {
+            String url = getString(R.string.base_uri) +"/daycalendar/"+ User.getUser().getInt("id");
+            String stringifiedJson = new JsonTask(url).execute().get();
+            JSONArray jsonArray = new JSONArray(stringifiedJson);
+            System.out.println(jsonArray.toString());
+            for (int i = 0; i < jsonArray.length(); i++) {
+                final JSONObject jsonObject = jsonArray.getJSONObject(i);
+                UserCollection.add(new UserCollection() {{
+                    setTitle(jsonObject.getString("title"));
+                    setLocation(jsonObject.getString("eventLocation"));
+                    setSubject(jsonObject.getString("event_Subject"));
+                    setDescription(jsonObject.getString("eventDescription"));
+                    setDate(jsonObject.getString("eventStart"));
+                }});
+            }
+            refreshCalendar();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     public void onClick(View v) {
         int id = v.getId();
@@ -138,7 +164,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.fab2:
                 Intent intent1 = new Intent(CalendarView.this, MemoCalendar.class);
-                startActivityForResult(intent1,300);
+                startActivityForResult(intent1, 300);
                 anim();
                 break;
         }
@@ -212,13 +238,18 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        Intent intent;
         switch (menuItem.getItemId()) {
             case R.id.google:
-                Intent intent = new Intent(this, GoogleOAuth.class);
+                intent = new Intent(this, GoogleOAuth.class);
                 startActivity(intent);
                 break;
             case R.id.logout:
-                Toast.makeText(this, "item3 select", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "로그아웃했습니다.", Toast.LENGTH_SHORT).show();
+                UserCollection.getInstance().clear();
+                intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

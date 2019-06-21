@@ -32,7 +32,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.ViewHolder viewHolder, int i) {
-        viewHolder.textTitle.setText("Title :" +custom.get(i).getName());
+        viewHolder.textTitle.setText("Title :" +custom.get(i).getTitle());
         viewHolder.textLocation.setText("Location :"+custom.get(i).getLocation());
         viewHolder.textSubject.setText("Subject :" +custom.get(i).getSubject());
         viewHolder.textDueDate.setText("Due Date :"+custom.get(i).getDate());

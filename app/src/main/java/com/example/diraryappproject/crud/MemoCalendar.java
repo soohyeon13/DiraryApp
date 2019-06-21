@@ -87,7 +87,7 @@ public class MemoCalendar extends AppCompatActivity implements ColorPickerDialog
                 final String day = datePickerBtn.getText().toString();
 
                 UserCollection.add(new UserCollection() {{
-                    setName(title);
+                    setTitle(title);
                     setLocation(location);
                     setDescription(description);
                     setDate(day);

@@ -3,6 +3,7 @@ package com.example.diraryappproject.signup;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -24,10 +25,9 @@ public class SignUpActivity extends AppCompatActivity {
         signUpEmail = findViewById(R.id.signUpEmail);
 
         signUpPassword = findViewById(R.id.signUpPassword);
+        signUpPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
 
-
-        final String url_signup = "http://172.19.4.85:8080/";
-
+        final String url_signup = getString(R.string.base_uri);
 
         submitBtn = findViewById(R.id.signUpSubmit);
         cancelBtn = findViewById(R.id.signUpCancel);
@@ -37,7 +37,7 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = signUpEmail.getText().toString();
                 String password = signUpPassword.getText().toString();
-                final String url_body = "user/creat?username="+email+"&"+"userpassword="+password;
+                final String url_body = "/user/creat?username="+email+"&"+"userpassword="+password;
                 HttpConnection httpConnection = new HttpConnection(SignUpActivity.this);
                 httpConnection.setUrl_Home(url_signup);
                 httpConnection.setBody(url_body);

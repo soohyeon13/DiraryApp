@@ -51,14 +51,14 @@ public class MainActivity extends AppCompatActivity {
 
                 String user = loginEmail.getText().toString();
                 String password = loginPassword.getText().toString();
-                String text = user + "&" + password;
+                String text = user + ":" + password;
                 try {
                     String auth = encode(text);
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
                 final String authorization = Base64Utils.encode((user + ":" + password).getBytes());
-                final String url_signin = "http://172.19.4.85:8080/user/me";
+                final String url_signin = getString(R.string.base_uri)+"/user/me";
                 final String url_authorization = "Basic " + authorization;
                 JSONObject result = null;
                 try {
@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
 //                    System.out.println(a);
                     Intent intent = new Intent(MainActivity.this, CalendarView.class);
                     startActivity(intent);
+                    finish();
 
                 } catch (JSONException e) {
                     Toast.makeText(MainActivity.this, "아이디/비밀번호를 확인해주세요.", Toast.LENGTH_LONG).show();
