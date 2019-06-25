@@ -1,6 +1,7 @@
 package com.example.diraryappproject.Calendar;
 
 import android.app.Activity;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,7 +14,7 @@ import com.example.diraryappproject.R;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder>{
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ScheduleViewHolder>{
     private ArrayList<UserCollection> custom;
     private Activity context;
 
@@ -24,19 +25,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @NonNull
     @Override
-    public RecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ScheduleViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.recycler_item,viewGroup,false);
-        RecyclerAdapter.ViewHolder vh = new RecyclerAdapter.ViewHolder(view);
+        ScheduleViewHolder vh = new ScheduleViewHolder(view, context);
         return vh;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerAdapter.ViewHolder viewHolder, int i) {
-        viewHolder.textTitle.setText("Title :" +custom.get(i).getTitle());
-        viewHolder.textLocation.setText("Location :"+custom.get(i).getLocation());
-        viewHolder.textSubject.setText("Subject :" +custom.get(i).getSubject());
-        viewHolder.textDueDate.setText("Due Date :"+custom.get(i).getDate());
-        viewHolder.textDescription.setText("Description :" + custom.get(i).getDescription());
+    public void onBindViewHolder(@NonNull ScheduleViewHolder scheduleViewHolder, int i) {
+        scheduleViewHolder.textTitle.setText("Title :" +custom.get(i).getTitle());
+        scheduleViewHolder.textLocation.setText("Location :"+custom.get(i).getLocation());
+        scheduleViewHolder.textSubject.setText("Subject :" +custom.get(i).getSubject());
+        scheduleViewHolder.textDueDate.setText("Due Date :"+custom.get(i).getDate());
+        scheduleViewHolder.textDescription.setText("Description :" + custom.get(i).getDescription());
     }
 
     @Override
@@ -50,11 +51,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         notifyDataSetChanged();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ScheduleViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView textTitle,textSubject,textDueDate,textDescription,textLocation;
         ImageButton imageButton,imageBtnUpdate;
-        public ViewHolder(@NonNull View itemView) {
+        Activity activity;
+        public ScheduleViewHolder(@NonNull View itemView, @NonNull Activity activity) {
             super(itemView);
+            this.activity = activity;
             textTitle = itemView.findViewById(R.id.tv_name);
             textSubject = itemView.findViewById(R.id.tv_type);
             textDueDate = itemView.findViewById(R.id.tv_desc);
@@ -72,6 +75,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                 removedAt(getPosition());
             }
             if (v.equals(imageBtnUpdate)) {
+                if(activity instanceof CalendarView){
+                    ((CalendarView)activity).requestScheduleEdit(this);
+                }
             }
         }
 
@@ -79,6 +85,30 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             custom.remove(itemId);
             notifyItemRemoved(itemId);
             notifyItemRangeChanged(itemId,custom.size());
+        }
+
+        public void setSchedule(Bundle bundle) {
+            String title = bundle.getString("title");
+            textTitle.setText(title);
+            String subject = bundle.getString("subject");
+            textSubject.setText(subject);
+            String duedate = bundle.getString("duedate");
+            textDueDate.setText(duedate);
+            String description = bundle.getString("description");
+            textDescription.setText(description);
+            String location = bundle.getString("location");
+            textLocation.setText(location);
+
+        }
+
+        private Bundle packSchedule() {
+            Bundle schedule = new Bundle();
+            schedule.putString("title", textTitle.getText().toString());
+            schedule.putString("subject",textSubject.getText().toString());
+            schedule.putString("duedate",textDueDate.getText().toString());
+            schedule.putString("description",textDescription.getText().toString());
+            schedule.putString("location",textLocation.getText().toString());
+            return schedule;
         }
     }
 }

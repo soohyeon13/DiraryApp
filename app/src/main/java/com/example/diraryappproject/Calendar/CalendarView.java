@@ -57,6 +57,10 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
     private RecyclerView dialogRecyclerView;
     private RecyclerAdapter recyclerAdapter;
 
+    public static final int EDIT_SCHEDULE_REQUEST = 2;
+
+    private RecyclerAdapter.ScheduleViewHolder requestedScheduleViewHoler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,10 +68,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.drawer_calendar);
 
-
         setDialogRecyclerView();
-
-
 
         calMonth = (GregorianCalendar) GregorianCalendar.getInstance();
         calMonthClone = (GregorianCalendar) calMonth.clone();
@@ -172,7 +173,13 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        refreshCalendar();
+        if(requestCode == EDIT_SCHEDULE_REQUEST && resultCode == RESULT_OK){
+            Bundle schedule = data.getExtras();
+            requestedScheduleViewHoler.setSchedule(schedule);
+            requestedScheduleViewHoler = null;
+        } else if(resultCode == RESULT_OK){
+            refreshCalendar();
+        }
     }
 
     public void anim() {
@@ -236,13 +243,19 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    public void requestScheduleEdit(RecyclerAdapter.ScheduleViewHolder scheduleViewHolder) {
+        requestedScheduleViewHoler = scheduleViewHolder;
+        Intent scheduleEdit = new Intent(this, DayCalendar.class);
+        startActivityForResult(scheduleEdit, EDIT_SCHEDULE_REQUEST);
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         Intent intent;
         switch (menuItem.getItemId()) {
             case R.id.google:
                 intent = new Intent(this, GoogleOAuth.class);
-                startActivity(intent);
+                startActivityForResult(intent,10);
                 break;
             case R.id.logout:
                 Toast.makeText(this, "로그아웃했습니다.", Toast.LENGTH_SHORT).show();

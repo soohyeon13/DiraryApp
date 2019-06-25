@@ -39,10 +39,16 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
     DatePickerDialog.OnDateSetListener listener;
     private String url_home;
 
+    private int requestCode = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daycalendar);
+//
+//        Intent intent =getIntent();
+//        requestCode = intent.
+
         url_home = getString(R.string.base_uri) +"/daycalendar/add";
         final Calendar calendar = Calendar.getInstance();
         mYear = calendar.get(Calendar.YEAR);
@@ -99,6 +105,8 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
                 final String description = editDescription.getText().toString();
                 final String day = datePickerBtn.getText().toString();
 
+
+
                 JSONObject jsonObject = new JSONObject();
                 try {
                     jsonObject.put("title",title);
@@ -131,6 +139,7 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setResult(RESULT_CANCELED);
                 finish();
             }
         });

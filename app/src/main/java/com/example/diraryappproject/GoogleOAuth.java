@@ -15,9 +15,12 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.text.method.ScrollingMovementMethod;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.diraryappproject.Calendar.UserCollection;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -65,6 +68,8 @@ public class GoogleOAuth extends AppCompatActivity implements EasyPermissions.Pe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.google_oauth);
+
+        Button completeBtn = findViewById(R.id.complete);
         mProgress = new ProgressDialog(this);
         mProgress.setMessage("Google Calendar API 호출중...");
         mResultText = (TextView) findViewById(R.id.textview_main_result);
@@ -76,6 +81,15 @@ public class GoogleOAuth extends AppCompatActivity implements EasyPermissions.Pe
 
         mResultText.setVerticalScrollBarEnabled(true);
         mResultText.setMovementMethod(new ScrollingMovementMethod());
+        completeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent resultIntent = new Intent();
+                setResult(RESULT_OK, resultIntent);
+                finish();
+            }
+        });
 
     }
 
@@ -242,18 +256,26 @@ public class GoogleOAuth extends AppCompatActivity implements EasyPermissions.Pe
                     .setSingleEvents(true)
                     .execute();
             List<Event> items = events.getItems();
-            for (Event event : items) {
+            for (final Event event : items) {
                 DateTime start = event.getStart().getDateTime();
                 if (start == null) {
                     start = event.getStart().getDate();
                 }
-                eventStrings.add(String.format("%s \n (%s)", event.getSummary(), start));
+                eventStrings.add(String.format("%s \n %s", event.getSummary(), start));
+                final DateTime finalStart = start;
+                UserCollection.add(new UserCollection() {{
+                    setTitle(event.getSummary());
+                    setDate(String.format("%s", finalStart));
+                }});
             }
+
+            System.out.println(eventStrings.size());
             return eventStrings.size() + "개의 데이터를 가져옴";
         }
         @Override
         protected void onPostExecute(String output) {
             mProgress.hide();
+            mProgress.dismiss();
             mResultText.setText(TextUtils.join("\n\n", eventStrings));
         }
     }
