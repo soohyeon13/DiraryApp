@@ -12,10 +12,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.diraryappproject.Calendar.UserCollection;
+import com.example.diraryappproject.data.UserCollection;
 import com.example.diraryappproject.ColorData;
 import com.example.diraryappproject.R;
-import com.example.diraryappproject.User;
+import com.example.diraryappproject.data.User;
 import com.jaredrummler.android.colorpicker.ColorPickerDialog;
 import com.jaredrummler.android.colorpicker.ColorPickerDialogListener;
 
@@ -122,7 +122,7 @@ public class DayCalendar extends AppCompatActivity implements ColorPickerDialogL
                 System.out.println(jsonObject);
                 new CalendarPost(url_home,jsonObject).execute();
 
-                UserCollection.add(new UserCollection() {{
+                UserCollection.getInstance().add(new UserCollection() {{
                     setTitle(title);
                     setLocation(location);
                     setSubject(subject);

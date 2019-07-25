@@ -1,4 +1,4 @@
-package com.example.diraryappproject.Calendar;
+package com.example.diraryappproject.adapter;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,15 +10,17 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.diraryappproject.Calendar.CalendarView;
+import com.example.diraryappproject.data.UserCollection;
 import com.example.diraryappproject.R;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ScheduleViewHolder>{
+public class DayRecyclerAdapter extends RecyclerView.Adapter<DayRecyclerAdapter.ScheduleViewHolder>{
     private ArrayList<UserCollection> custom;
     private Activity context;
 
-    public RecyclerAdapter(Activity context, ArrayList<UserCollection> custom) {
+    public DayRecyclerAdapter(Activity context, ArrayList<UserCollection> custom) {
         this.context = context;
         this.custom = custom;
     }
@@ -33,11 +35,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Schedu
 
     @Override
     public void onBindViewHolder(@NonNull ScheduleViewHolder scheduleViewHolder, int i) {
-        scheduleViewHolder.textTitle.setText("Title :" +custom.get(i).getTitle());
-        scheduleViewHolder.textLocation.setText("Location :"+custom.get(i).getLocation());
-        scheduleViewHolder.textSubject.setText("Subject :" +custom.get(i).getSubject());
-        scheduleViewHolder.textDueDate.setText("Due Date :"+custom.get(i).getDate());
-        scheduleViewHolder.textDescription.setText("Description :" + custom.get(i).getDescription());
+        scheduleViewHolder.textTitle.setText("제목 :" +custom.get(i).getTitle());
+        scheduleViewHolder.textLocation.setText("장소:"+custom.get(i).getLocation());
+//        scheduleViewHolder.textSubject.setText("Subject :" +custom.get(i).getSubject());
+        scheduleViewHolder.textDueDate.setText("날짜 :"+custom.get(i).getDate());
+        scheduleViewHolder.textDescription.setText("설명:" + custom.get(i).getDescription());
     }
 
     @Override

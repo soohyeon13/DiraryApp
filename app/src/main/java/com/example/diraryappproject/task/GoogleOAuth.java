@@ -1,4 +1,4 @@
-package com.example.diraryappproject;
+package com.example.diraryappproject.task;
 
 import android.Manifest;
 import android.accounts.AccountManager;
@@ -20,7 +20,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.diraryappproject.Calendar.UserCollection;
+import com.example.diraryappproject.R;
+import com.example.diraryappproject.data.UserCollection;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -263,7 +264,7 @@ public class GoogleOAuth extends AppCompatActivity implements EasyPermissions.Pe
                 }
                 eventStrings.add(String.format("%s \n %s", event.getSummary(), start));
                 final DateTime finalStart = start;
-                UserCollection.add(new UserCollection() {{
+                UserCollection.getInstance().add(new UserCollection() {{
                     setTitle(event.getSummary());
                     setDate(String.format("%s", finalStart));
                 }});

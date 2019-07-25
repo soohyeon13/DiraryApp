@@ -1,4 +1,4 @@
-package com.example.diraryappproject.Calendar;
+package com.example.diraryappproject.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.diraryappproject.data.UserCollection;
 import com.example.diraryappproject.ColorData;
 import com.example.diraryappproject.R;
 
@@ -42,26 +43,25 @@ public class UserAdapter extends BaseAdapter {
     String itemValue;
     String currentDateString;
     DateFormat dateFormat;
-    private RecyclerAdapter recyclerAdapter;
+    private DayRecyclerAdapter dayRecyclerAdapter;
     private ArrayList<UserCollection> custom = new ArrayList<UserCollection>();
     private ColorData colorData;
 
 
-    public UserAdapter(Activity context, Calendar monthCalendar, RecyclerAdapter recyclerAdapter) {
+    public UserAdapter(Activity context, Calendar monthCalendar, DayRecyclerAdapter dayRecyclerAdapter) {
 
         UserAdapter.dayString = new ArrayList<String>();
         Locale.setDefault(Locale.KOREAN);
         month = monthCalendar;
         selectDate = (GregorianCalendar) monthCalendar.clone();
         this.context = context;
-        this.recyclerAdapter = recyclerAdapter;
+        this.dayRecyclerAdapter = dayRecyclerAdapter;
         month.set(GregorianCalendar.DAY_OF_MONTH, 1);
 
         this.items = new ArrayList<String>();
         dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREAN);
         currentDateString = dateFormat.format(selectDate.getTime());
         refreshDays();
-
     }
 
     public void refreshDays() {
@@ -211,7 +211,7 @@ public class UserAdapter extends BaseAdapter {
             }
         }
         if (jsonArray.length() != 0) {
-            recyclerAdapter.setList(getMatchList(jsonArray + ""));
+            dayRecyclerAdapter.setList(getMatchList(jsonArray + ""));
         }
     }
 

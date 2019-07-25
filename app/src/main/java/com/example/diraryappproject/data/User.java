@@ -1,4 +1,4 @@
-package com.example.diraryappproject;
+package com.example.diraryappproject.data;
 
 import org.json.JSONObject;
 

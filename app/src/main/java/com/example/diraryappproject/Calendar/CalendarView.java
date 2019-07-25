@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,13 +26,19 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.diraryappproject.GoogleOAuth;
 import com.example.diraryappproject.MainActivity;
 import com.example.diraryappproject.R;
-import com.example.diraryappproject.User;
+import com.example.diraryappproject.adapter.DayRecyclerAdapter;
+import com.example.diraryappproject.adapter.UserAdapter;
 import com.example.diraryappproject.crud.DayCalendar;
 import com.example.diraryappproject.crud.MemoCalendar;
+import com.example.diraryappproject.data.User;
+import com.example.diraryappproject.data.UserCollection;
+import com.example.diraryappproject.task.GoogleOAuth;
 import com.example.diraryappproject.task.JsonTask;
+import com.example.diraryappproject.view.TotalDayRecycler;
+import com.example.diraryappproject.view.TotalMemoRecycler;
+import com.google.api.services.calendar.model.Setting;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -54,12 +61,13 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
     private Boolean isFabOpen = false;
     private FloatingActionButton fab, fab1, fab2;
 
-    private RecyclerView dialogRecyclerView;
-    private RecyclerAdapter recyclerAdapter;
+//    private RecyclerView dialogRecyclerView;
+    private DayRecyclerAdapter dayRecyclerAdapter;
 
     public static final int EDIT_SCHEDULE_REQUEST = 2;
 
-    private RecyclerAdapter.ScheduleViewHolder requestedScheduleViewHoler;
+    private DayRecyclerAdapter.ScheduleViewHolder requestedScheduleViewHoler;
+    private RecyclerView dialogRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +80,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
 
         calMonth = (GregorianCalendar) GregorianCalendar.getInstance();
         calMonthClone = (GregorianCalendar) calMonth.clone();
-        userAdapter = new UserAdapter(CalendarView.this, calMonth, recyclerAdapter);
+        userAdapter = new UserAdapter(CalendarView.this, calMonth, dayRecyclerAdapter);
 
         textMonth = findViewById(R.id.textMonth);
         textMonth.setText(DateFormat.format("yyyy년MM월", calMonth));
@@ -124,6 +132,31 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
                 ((UserAdapter) parent.getAdapter()).getPositionList(selectGridDate, CalendarView.this);
             }
         });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavi);
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                        switch (menuItem.getItemId()) {
+                            case R.id.bottom_item1 :
+                                Intent intent = new Intent(CalendarView.this, TotalDayRecycler.class);
+                                startActivityForResult(intent,10);
+                                return true;
+                            case R.id.bottom_item2 :
+                                Intent intent1 = new Intent(CalendarView.this, TotalMemoRecycler.class);
+                                startActivityForResult(intent1,20);
+                                return true;
+                            case R.id.bottom_item3:
+                                Intent intent2 = new Intent(CalendarView.this, Setting.class);
+                                startActivityForResult(intent2,30);
+                                return true;
+
+                        }
+                        return false;
+                    }
+                }
+        );
     }
 
     private void jsonRead() {
@@ -134,7 +167,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
             System.out.println(jsonArray.toString());
             for (int i = 0; i < jsonArray.length(); i++) {
                 final JSONObject jsonObject = jsonArray.getJSONObject(i);
-                UserCollection.add(new UserCollection() {{
+                UserCollection.getInstance().add(new UserCollection() {{
                     setTitle(jsonObject.getString("title"));
                     setLocation(jsonObject.getString("eventLocation"));
                     setSubject(jsonObject.getString("event_Subject"));
@@ -199,10 +232,10 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
     }
 
     private void setDialogRecyclerView() {
-        dialogRecyclerView = findViewById(R.id.recyclerList);
-        recyclerAdapter = new RecyclerAdapter(this, new ArrayList<UserCollection>());
+        dialogRecyclerView = findViewById(R.id.list);
+        dayRecyclerAdapter = new DayRecyclerAdapter(this, new ArrayList<UserCollection>());
         dialogRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        dialogRecyclerView.setAdapter(recyclerAdapter);
+        dialogRecyclerView.setAdapter(dayRecyclerAdapter);
     }
 
     private void setNextMonth() {
@@ -243,7 +276,7 @@ public class CalendarView extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    public void requestScheduleEdit(RecyclerAdapter.ScheduleViewHolder scheduleViewHolder) {
+    public void requestScheduleEdit(DayRecyclerAdapter.ScheduleViewHolder scheduleViewHolder) {
         requestedScheduleViewHoler = scheduleViewHolder;
         Intent scheduleEdit = new Intent(this, DayCalendar.class);
         startActivityForResult(scheduleEdit, EDIT_SCHEDULE_REQUEST);

@@ -6,7 +6,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
 
     <application
         android:allowBackup="true"
@@ -19,6 +23,7 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +33,10 @@
         </activity>
         <activity android:name=".signup.SignUpActivity"></activity>
         <activity android:name=".Calendar.CalendarView"></activity>
-        <activity android:name=".GoogleOAuth"></activity>
+        <activity android:name=".view.TotalDayRecycler"></activity>
+        <activity android:name=".view.TotalMemoRecycler"></activity>
+        <activity android:name=".view.Settings"></activity>
+        <activity android:name=".task.GoogleOAuth"></activity>
         <activity android:name=".crud.DayCalendar"></activity>
         <activity android:name=".crud.MemoCalendar"></activity>
 

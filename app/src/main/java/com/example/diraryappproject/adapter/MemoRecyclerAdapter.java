@@ -1,4 +1,4 @@
-package com.example.diraryappproject.Calendar;
+package com.example.diraryappproject.adapter;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.diraryappproject.data.MemoCollection;
 import com.example.diraryappproject.R;
 
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class MemoRecyclerAdapter extends RecyclerView.Adapter<MemoRecyclerAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MemoRecyclerAdapter.ViewHolder viewHolder, int i) {
-        viewHolder.textTitle.setText("Title :" +customList.get(i).getName());
+        viewHolder.textTitle.setText("Title :" +customList.get(i).getTitle());
         viewHolder.textLocation.setText("Location :"+customList.get(i).getLocation());
         viewHolder.textDueDate.setText("Due Date :"+customList.get(i).getDate());
         viewHolder.textDescription.setText("Description :" + customList.get(i).getDescription());

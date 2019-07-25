@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.diraryappproject.Calendar.CalendarView;
+import com.example.diraryappproject.data.User;
 import com.example.diraryappproject.signup.SignUpActivity;
 import com.example.diraryappproject.task.HttpPostTask;
 import com.google.android.gms.common.util.Base64Utils;
